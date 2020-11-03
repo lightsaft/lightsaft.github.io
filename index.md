@@ -22,13 +22,38 @@ layout: default
     <th>Other</th>
   </tr>
   <tr>
-    <td data-th="#"><a href='https://soundcloud.com/choi-hn/2-2u' target='_blank'>1</a></td>
+    <td data-th="Vanishing paycheck - Stella Jang"><a href='https://youtu.be/EVGVJQtwxCY' target='_blank'>1</a></td>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck.mp3" type="audio/mp3"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-other.wav" type="audio/wav"></audio></td>
+  </tr>
+  <tr>
+    <td data-th="Villain - Stella Jang"><a href='https://youtu.be/ghpn99s8I-U' target='_blank'>1</a></td>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain.mp3" type="audio/mp3"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-other.wav" type="audio/wav"></audio></td>
+  </tr>
+  <tr>
+    <td data-th="La Vie EN Rose - Stella Jang"><a href='https://youtu.be/n-ozFN8tGKM' target='_blank'>1</a></td>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose.mp3" type="audio/mp3"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-other.wav" type="audio/wav"></audio></td>
+  </tr>
+  <tr>
+    <td data-th="Footprint - Woosung Choi"><a href='https://soundcloud.com/choi-hn/2-2u' target='_blank'>1</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint.mp3" type="audio/mp3"></audio></td>
     <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-vocals.wav" type="audio/wav"></audio></td>
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-drums.wav" type="audio/wav"></audio></td>
     <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-bass.wav" type="audio/wav"></audio></td>
     <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-other.wav" type="audio/wav"></audio></td>
   </tr>
+  
 </table>
 
 Implementation author: [Woosung Choi](https://ws-choi.github.io/) at [IELab](http://intelligence.korea.ac.kr/)
