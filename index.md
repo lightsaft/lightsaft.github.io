@@ -10,12 +10,13 @@ layout: default
 
 **Paper** : [arXiv](https://arxiv.org/abs/2010.11631)
 
-**Colab Interactive Demo** 
-  - [Stella Jang](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
-  - [Feel this breeze - (Prod. JoeSwan) - HyungWoo & Sunmin](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
-  - [Other tracks](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
-  
-#### Track Infomation
+**Colab Interactive Demo**
+
+- [Stella Jang](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
+- [Feel this breeze - (Prod. JoeSwan) - HyungWoo & Sunmin](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
+- [Other tracks](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
+
+**Track Infomation**
 
 1. [Vanishing paycheck](https://youtu.be/EVGVJQtwxCY) - Stella Jang
 2. [Villain](https://youtu.be/ghpn99s8I-U) - Stella Jang
