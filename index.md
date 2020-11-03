@@ -14,6 +14,7 @@ layout: default
 
 <table>
   <tr>
+    <th>#</th>
     <th>Original</th>
     <th>Vocals</th>
     <th>Drums</th>
@@ -21,6 +22,7 @@ layout: default
     <th>Other</th>
   </tr>
   <tr>
+    <td data-th="#"><a href='https://soundcloud.com/choi-hn/2-2u' target='_blank'>1</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint.mp3" type="audio/mp3"></audio></td>
     <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-vocals.wav" type="audio/wav"></audio></td>
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-drums.wav" type="audio/wav"></audio></td>
