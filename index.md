@@ -23,7 +23,8 @@ layout: default
 3. [La Vie EN Rose](https://youtu.be/n-ozFN8tGKM) - Stella Jang
 4. [Feel this breeze](https://youtu.be/n-ozFN8tGKM) - (Prod. JoeSwan) - HyungWoo & Sunmin
 5. [Footprints](https://soundcloud.com/choi-hn/2-2u) - Woosung Choi
-6. We will upload other tracks after dealing with copyright issues.
+7. [Ms. Seductive - Jeff Bernat (cover)](https://soundcloud.com/choi-hn/ms-seductive) - Woosung Choi
+8. We will upload other tracks after dealing with copyright issues.
 
 <table>
   <tr>
@@ -33,7 +34,6 @@ layout: default
     <th>Drums</th>
     <th>Bass</th>
     <th>Other</th>
-    <th>Track info.</th>
   </tr>
   <tr>
     <td data-th="#"><a href='https://youtu.be/EVGVJQtwxCY' target='_blank'>1</a></td>
@@ -68,7 +68,15 @@ layout: default
     <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze-other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
-    <td data-th="#"><a href='https://soundcloud.com/choi-hn/2-2u' target='_blank'>5</a></td>
+    <td data-th="#"><a href='https://soundcloud.com/choi-hn/ms-seductive' target='_blank'>5</a></td>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive.mp3" type="audio/mp3"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-other.wav" type="audio/wav"></audio></td>
+  </tr>
+  <tr>
+    <td data-th="#"><a href='https://soundcloud.com/choi-hn/2-2u' target='_blank'>6</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint.mp3" type="audio/mp3"></audio></td>
     <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-vocals.wav" type="audio/wav"></audio></td>
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-drums.wav" type="audio/wav"></audio></td>
