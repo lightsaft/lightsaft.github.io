@@ -87,7 +87,7 @@ layout: default
   </tr>
   <tr>
     <td data-th="#"><a href='https://soundcloud.com/choi-hn/ms-seductive' target='_blank'>7</a></td>
-    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive.mp3" type="audio/mp3"></audio></td>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive.wav" type="audio/mp3"></audio></td>
     <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-vocals.wav" type="audio/wav"></audio></td>
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-drums.wav" type="audio/wav"></audio></td>
     <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-bass.wav" type="audio/wav"></audio></td>
