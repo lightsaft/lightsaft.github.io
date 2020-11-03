@@ -12,8 +12,8 @@ layout: default
 
 **Colab Interactive Demo** : [LaSAFT with GPoCM Stella Jang Example](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
 
-| Original | Vocals | Drums | Bass | Others |
+| Original | Vocals | Drums | Bass | Other |
 | -------- | ------ | ----- | ---- | ------ |
-| <audio controls="" class="audio-player" preload="metadata"><source src="audios/mixed.wav" type="audio/wav"></audio> | 1 | 2 | 3 | 4 |
+| <audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint.mp3" type="audio/mp3"></audio> | <audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-vocals.wav" type="audio/wav"></audio> | <audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-drums.wav" type="audio/wav"></audio> | <audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-bass.wav" type="audio/wav"></audio> | <audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-other.wav" type="audio/wav"></audio> |
 
-footer
+Implementation author: [Woosung Choi](https://ws-choi.github.io/) at [IELab](http://intelligence.korea.ac.kr/)
