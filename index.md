@@ -23,7 +23,7 @@ layout: default
   </tr>
   <tr>
     <td data-th="#"><a href='https://youtu.be/EVGVJQtwxCY' target='_blank'>Vanishing paycheck - Stella Jang</a></td>
-    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck.mp3" type="audio/mp3"></audio></td>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck.wav" type="audio/mp3"></audio></td>
     <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-vocals.wav" type="audio/wav"></audio></td>
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-drums.wav" type="audio/wav"></audio></td>
     <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-bass.wav" type="audio/wav"></audio></td>
@@ -31,7 +31,7 @@ layout: default
   </tr>
   <tr>
     <td data-th="#"><a href='https://youtu.be/ghpn99s8I-U' target='_blank'>Villain - Stella Jang</a></td>
-    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain.mp3" type="audio/mp3"></audio></td>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain.wav" type="audio/mp3"></audio></td>
     <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-vocals.wav" type="audio/wav"></audio></td>
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-drums.wav" type="audio/wav"></audio></td>
     <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-bass.wav" type="audio/wav"></audio></td>
@@ -39,7 +39,7 @@ layout: default
   </tr>
   <tr>
     <td data-th="#"><a href='https://youtu.be/n-ozFN8tGKM' target='_blank'>La Vie EN Rose - Stella Jang</a></td>
-    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose.mp3" type="audio/mp3"></audio></td>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose.wav" type="audio/mp3"></audio></td>
     <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-vocals.wav" type="audio/wav"></audio></td>
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-drums.wav" type="audio/wav"></audio></td>
     <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-bass.wav" type="audio/wav"></audio></td>
