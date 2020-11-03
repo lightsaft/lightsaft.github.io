@@ -21,10 +21,12 @@ layout: default
 1. [Vanishing paycheck](https://youtu.be/EVGVJQtwxCY) - Stella Jang
 2. [Villain](https://youtu.be/ghpn99s8I-U) - Stella Jang
 3. [La Vie EN Rose](https://youtu.be/n-ozFN8tGKM) - Stella Jang
-4. [Feel this breeze](https://youtu.be/n-ozFN8tGKM) - (Prod. JoeSwan) - HyungWoo & Sunmin
-5. [Footprints](https://soundcloud.com/choi-hn/2-2u) - Woosung Choi
-7. [Ms. Seductive - Jeff Bernat (cover)](https://soundcloud.com/choi-hn/ms-seductive) - Woosung Choi
-8. We will upload other tracks after dealing with copyright issues.
+4. [Feel this breeze](https://youtu.be/DjF17EglSt8) - (Prod. JoeSwan) - HyungWoo & Sunmin
+5. [Keep the Love Alive](https://www.youtube.com/watch?v=c6M1BKAH7eU) - Kyul, TM
+6. [HongJinHo](https://www.youtube.com/watch?v=7KgpnRnS3fk) - GUIN
+7. [Footprints](https://soundcloud.com/choi-hn/2-2u) - Woosung Choi
+8. [Ms. Seductive - Jeff Bernat (cover)](https://soundcloud.com/choi-hn/ms-seductive) - Woosung Choi
+9. We will upload other tracks after dealing with copyright issues.
 
 <table>
   <tr>
@@ -60,7 +62,7 @@ layout: default
     <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
-    <td data-th="#"><a href='https://youtu.be/n-ozFN8tGKM' target='_blank'>4</a></td>
+    <td data-th="#"><a href='https://youtu.be/n-DjF17EglSt8' target='_blank'>4</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze.wav" type="audio/mp3"></audio></td>
     <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze-vocals.wav" type="audio/wav"></audio></td>
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze-drums.wav" type="audio/wav"></audio></td>
@@ -68,7 +70,23 @@ layout: default
     <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze-other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
-    <td data-th="#"><a href='https://soundcloud.com/choi-hn/ms-seductive' target='_blank'>5</a></td>
+    <td data-th="#"><a href='https://www.youtube.com/watch?v=c6M1BKAH7eU' target='_blank'>5</a></td>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul.wav" type="audio/mp3"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul-vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul-drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul-bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul-other.wav" type="audio/wav"></audio></td>
+  </tr>
+  <tr>
+    <td data-th="#"><a href='https://www.youtube.com/watch?v=7KgpnRnS3fk' target='_blank'>6</a></td>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin.wav" type="audio/mp3"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin-vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin-drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin-bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin-other.wav" type="audio/wav"></audio></td>
+  </tr>
+  <tr>
+    <td data-th="#"><a href='https://soundcloud.com/choi-hn/ms-seductive' target='_blank'>7</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive.mp3" type="audio/mp3"></audio></td>
     <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-vocals.wav" type="audio/wav"></audio></td>
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-drums.wav" type="audio/wav"></audio></td>
@@ -76,7 +94,7 @@ layout: default
     <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
-    <td data-th="#"><a href='https://soundcloud.com/choi-hn/2-2u' target='_blank'>6</a></td>
+    <td data-th="#"><a href='https://soundcloud.com/choi-hn/2-2u' target='_blank'>8</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint.mp3" type="audio/mp3"></audio></td>
     <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-vocals.wav" type="audio/wav"></audio></td>
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-drums.wav" type="audio/wav"></audio></td>
