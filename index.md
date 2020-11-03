@@ -2,6 +2,8 @@
 layout: default
 ---
 
+### Latent Source Attentive Frequency Transformation for Conditioned Source Separation
+
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/lasaft-latent-source-attentive-frequency/music-source-separation-on-musdb18)](https://paperswithcode.com/sota/music-source-separation-on-musdb18?p=lasaft-latent-source-attentive-frequency)
 
 **Official Github Repo** : [ws-choi/Conditioned-Source-Separation-LaSAFT](https://github.com/ws-choi/Conditioned-Source-Separation-LaSAFT)
