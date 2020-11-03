@@ -41,7 +41,6 @@ layout: default
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-drums.wav" type="audio/wav"></audio></td>
     <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-bass.wav" type="audio/wav"></audio></td>
     <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-other.wav" type="audio/wav"></audio></td>
-    <td data-th="info">Vanishing paycheck - Stella Jang</td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://youtu.be/ghpn99s8I-U' target='_blank'>2</a></td>
@@ -50,7 +49,6 @@ layout: default
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-drums.wav" type="audio/wav"></audio></td>
     <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-bass.wav" type="audio/wav"></audio></td>
     <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-other.wav" type="audio/wav"></audio></td>
-    <td data-th="info">Villain - Stella Jang</td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://youtu.be/n-ozFN8tGKM' target='_blank'>3</a></td>
@@ -59,7 +57,6 @@ layout: default
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-drums.wav" type="audio/wav"></audio></td>
     <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-bass.wav" type="audio/wav"></audio></td>
     <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-other.wav" type="audio/wav"></audio></td>
-    <td data-th="info">La Vie EN Rose - Stella Jang</td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://youtu.be/n-ozFN8tGKM' target='_blank'>4</a></td>
@@ -68,7 +65,6 @@ layout: default
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze-drums.wav" type="audio/wav"></audio></td>
     <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze-bass.wav" type="audio/wav"></audio></td>
     <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze-other.wav" type="audio/wav"></audio></td>
-    <td data-th="info">Feel this breeze - (Prod. JoeSwan) - HyungWoo & Sunmin</td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://soundcloud.com/choi-hn/2-2u' target='_blank'>5</a></td>
