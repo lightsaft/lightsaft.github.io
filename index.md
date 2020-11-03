@@ -12,8 +12,21 @@ layout: default
 
 **Colab Interactive Demo** : [LaSAFT with GPoCM Stella Jang Example](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
 
-| Original | Vocals | Drums | Bass | Other |
-| -------- | ------ | ----- | ---- | ------ |
-| <audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint.mp3" type="audio/mp3"></audio> | <audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-vocals.wav" type="audio/wav"></audio> | <audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-drums.wav" type="audio/wav"></audio> | <audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-bass.wav" type="audio/wav"></audio> | <audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-other.wav" type="audio/wav"></audio> |
+<table>
+  <tr>
+    <th>Original</th>
+    <th>Vocals</th>
+    <th>Drums</th>
+    <th>Bass</th>
+    <th>Other</th>
+  </tr>
+  <tr>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint.mp3" type="audio/mp3"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-other.wav" type="audio/wav"></audio></td>
+  </tr>
+</table>
 
 Implementation author: [Woosung Choi](https://ws-choi.github.io/) at [IELab](http://intelligence.korea.ac.kr/)
