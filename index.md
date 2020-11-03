@@ -10,7 +10,19 @@ layout: default
 
 **Paper** : [arXiv](https://arxiv.org/abs/2010.11631)
 
-**Colab Interactive Demo** : [LaSAFT with GPoCM Stella Jang Example](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
+**Colab Interactive Demo** 
+  - [Stella Jang](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
+  - [Feel this breeze - (Prod. JoeSwan) - HyungWoo & Sunmin](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
+  - [Other tracks](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
+  
+#### Track Infomation
+
+1. [Vanishing paycheck](https://youtu.be/EVGVJQtwxCY) - Stella Jang
+2. [Villain](https://youtu.be/ghpn99s8I-U) - Stella Jang
+3. [La Vie EN Rose](https://youtu.be/n-ozFN8tGKM) - Stella Jang
+4. [Feel this breeze](https://youtu.be/n-ozFN8tGKM) - (Prod. JoeSwan) - HyungWoo & Sunmin
+5. [Footprints](https://soundcloud.com/choi-hn/2-2u) - Woosung Choi
+6. We will upload other tracks after dealing with copyright issues.
 
 <table>
   <tr>
@@ -65,11 +77,9 @@ layout: default
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-drums.wav" type="audio/wav"></audio></td>
     <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-bass.wav" type="audio/wav"></audio></td>
     <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-other.wav" type="audio/wav"></audio></td>
-    <td data-th="info">Footprint - Woosung Choi</td>
   </tr>
   
 </table>
 
-Implementation author: [Woosung Choi](https://ws-choi.github.io/) at [IELab](http://intelligence.korea.ac.kr/)
-
-Demonstration Webpage: [Taemin Lee](https://taeminlee.github.io/) at [Human-Inspired AI](http://hiai.co.kr)
+- Implementation author: [Woosung Choi](https://ws-choi.github.io/) at [IELab](http://intelligence.korea.ac.kr/)
+- Demonstration webpage: [Taemin Lee](https://taeminlee.github.io/) at [Human-Inspired AI](http://hiai.co.kr)
