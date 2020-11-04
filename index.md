@@ -113,7 +113,7 @@ We will upload other tracks after dealing with copyright issues.
   </tr>
   <tr>
     <td data-th="#"><a href='https://soundcloud.com/choi-hn/piano' target='_blank'>10</a></td>
-    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain.mp3" type="audio/mp3"></audio></td>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain.wav" type="audio/mp3"></audio></td>
     <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain-vocals.wav" type="audio/wav"></audio></td>
     <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain-drums.wav" type="audio/wav"></audio></td>
     <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain-bass.wav" type="audio/wav"></audio></td>
