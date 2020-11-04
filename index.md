@@ -124,7 +124,9 @@ We will upload other tracks after dealing with copyright issues.
 **Model Configuration**
 
 ```python
-from lasaft.source_separation.conditioned.cunet.models.dcun_tfc_gpocm_lasaft import DCUN_TFC_GPoCM_LaSAFT_Framework
+from lasaft.source_separation.\
+  conditioned.cunet.models.dcun_tfc_gpocm_lasaft\
+  import DCUN_TFC_GPoCM_LaSAFT_Framework
 
 args = {}
 
