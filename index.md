@@ -27,7 +27,7 @@ layout: default
 7. [두근대](https://www.youtube.com/watch?v=55-bC44AN0Y) - Sllo
 8. [Footprints](https://soundcloud.com/choi-hn/2-2u) - Woosung Choi
 9. [Ms. Seductive - Jeff Bernat (cover)](https://soundcloud.com/choi-hn/ms-seductive) - Woosung Choi
-
+10. [Rain](https://soundcloud.com/choi-hn/piano) - Woosung Choi
 We will upload other tracks after dealing with copyright issues.
 
 <table>
@@ -111,7 +111,14 @@ We will upload other tracks after dealing with copyright issues.
     <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-bass.wav" type="audio/wav"></audio></td>
     <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-other.wav" type="audio/wav"></audio></td>
   </tr>
-  
+  <tr>
+    <td data-th="#"><a href='https://soundcloud.com/choi-hn/piano' target='_blank'>10</a></td>
+    <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain.mp3" type="audio/mp3"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain-vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain-drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain-bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain-other.wav" type="audio/wav"></audio></td>
+  </tr>  
 </table>
 
 **Model Configuration**
