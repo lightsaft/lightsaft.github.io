@@ -34,82 +34,82 @@ We will upload other tracks after dealing with copyright issues.
   <tr>
     <td data-th="#"><a href='https://youtu.be/EVGVJQtwxCY' target='_blank'>1</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck.wav" type="audio/mp3"></audio></td>
-    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-vocals.wav" type="audio/wav"></audio></td>
-    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-drums.wav" type="audio/wav"></audio></td>
-    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-bass.wav" type="audio/wav"></audio></td>
-    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck-other.wav" type="audio/wav"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck_vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck_drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck_bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/vanishingcheck_other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://youtu.be/ghpn99s8I-U' target='_blank'>2</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain.wav" type="audio/mp3"></audio></td>
-    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-vocals.wav" type="audio/wav"></audio></td>
-    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-drums.wav" type="audio/wav"></audio></td>
-    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-bass.wav" type="audio/wav"></audio></td>
-    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain-other.wav" type="audio/wav"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain_vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain_drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain_bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/villain_other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://youtu.be/n-ozFN8tGKM' target='_blank'>3</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose.wav" type="audio/mp3"></audio></td>
-    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-vocals.wav" type="audio/wav"></audio></td>
-    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-drums.wav" type="audio/wav"></audio></td>
-    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-bass.wav" type="audio/wav"></audio></td>
-    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose-other.wav" type="audio/wav"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose_vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose_drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose_bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/LaVieEnRose_other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://youtu.be/DjF17EglSt8' target='_blank'>4</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze.wav" type="audio/mp3"></audio></td>
-    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze-vocals.wav" type="audio/wav"></audio></td>
-    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze-drums.wav" type="audio/wav"></audio></td>
-    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze-bass.wav" type="audio/wav"></audio></td>
-    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze-other.wav" type="audio/wav"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze_vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze_drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze_bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/feelthisbreeze_other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://www.youtube.com/watch?v=c6M1BKAH7eU' target='_blank'>5</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul.wav" type="audio/mp3"></audio></td>
-    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul-vocals.wav" type="audio/wav"></audio></td>
-    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul-drums.wav" type="audio/wav"></audio></td>
-    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul-bass.wav" type="audio/wav"></audio></td>
-    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul-other.wav" type="audio/wav"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul_vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul_drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul_bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/kyul_other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://www.youtube.com/watch?v=7KgpnRnS3fk' target='_blank'>6</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin.wav" type="audio/mp3"></audio></td>
-    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin-vocals.wav" type="audio/wav"></audio></td>
-    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin-drums.wav" type="audio/wav"></audio></td>
-    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin-bass.wav" type="audio/wav"></audio></td>
-    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin-other.wav" type="audio/wav"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin_vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin_drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin_bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/guin_other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://www.youtube.com/watch?v=55-bC44AN0Y' target='_blank'>7</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/sllo.wav" type="audio/mp3"></audio></td>
-    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/sllo-vocals.wav" type="audio/wav"></audio></td>
-    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/sllo-drums.wav" type="audio/wav"></audio></td>
-    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/sllo-bass.wav" type="audio/wav"></audio></td>
-    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/sllo-other.wav" type="audio/wav"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/sllo_vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/sllo_drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/sllo_bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/sllo_other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://soundcloud.com/choi-hn/ms-seductive' target='_blank'>8</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive.wav" type="audio/mp3"></audio></td>
-    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-vocals.wav" type="audio/wav"></audio></td>
-    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-drums.wav" type="audio/wav"></audio></td>
-    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-bass.wav" type="audio/wav"></audio></td>
-    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive-other.wav" type="audio/wav"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive_vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive_drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive_bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/msseductive_other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://soundcloud.com/choi-hn/2-2u' target='_blank'>9</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint.mp3" type="audio/mp3"></audio></td>
-    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-vocals.wav" type="audio/wav"></audio></td>
-    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-drums.wav" type="audio/wav"></audio></td>
-    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-bass.wav" type="audio/wav"></audio></td>
-    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint-other.wav" type="audio/wav"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint_vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint_drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint_bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/footprint_other.wav" type="audio/wav"></audio></td>
   </tr>
   <tr>
     <td data-th="#"><a href='https://soundcloud.com/choi-hn/piano' target='_blank'>10</a></td>
     <td data-th="Orig"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain.wav" type="audio/mp3"></audio></td>
-    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain-vocals.wav" type="audio/wav"></audio></td>
-    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain-drums.wav" type="audio/wav"></audio></td>
-    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain-bass.wav" type="audio/wav"></audio></td>
-    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain-other.wav" type="audio/wav"></audio></td>
+    <td data-th="Voc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain_vocals.wav" type="audio/wav"></audio></td>
+    <td data-th="Drum"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain_drums.wav" type="audio/wav"></audio></td>
+    <td data-th="Bass"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain_bass.wav" type="audio/wav"></audio></td>
+    <td data-th="Etc"><audio controls="" class="audio-player" preload="metadata"><source src="audios/rain_other.wav" type="audio/wav"></audio></td>
   </tr>  
 </table>
 
