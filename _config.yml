@@ -1,7 +1,7 @@
 # Site settings
-title: LaSAFT - Latent Source Attentive Frequency Transformation for Conditioned Source Separation
-tag_text: LaSAFT
-description: Demo of Latent Source Attentive Frequency Transformation for Conditioned Source Separation
+title: LightSAFT - Memory Efficient Latent Source Attentive Frequency Transformation for Conditioned Source Separation
+tag_text: LightSAFT
+description: Demo of Memory Efficient Latent Source Attentive Frequency Transformation for Conditioned Source Separation
 url: "http://127.0.0.1:4000"
 baseurl: ""
 
