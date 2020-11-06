@@ -2,10 +2,10 @@
 layout: default
 ---
 
-### Latent Source Attentive Frequency Transformation for Conditioned Source Separation
+### Lightsaft: Memory-efficient Latent Source Attentive Frequency Transformation for Conditioned Source Separation
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/lasaft-latent-source-attentive-frequency/music-source-separation-on-musdb18)](https://paperswithcode.com/sota/music-source-separation-on-musdb18?p=lasaft-latent-source-attentive-frequency)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=http%3A%2F%2Flasaft.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+<!--[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=http%3A%2F%2Flasaft.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 **Official Github Repo** : [ws-choi/Conditioned-Source-Separation-LaSAFT](https://github.com/ws-choi/Conditioned-Source-Separation-LaSAFT)
 
@@ -16,6 +16,8 @@ layout: default
 - [Stella Jang](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
 - [Feel this breeze - (Prod. JoeSwan) - HyungWoo & Sunmin](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
 - [Other tracks](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
+
+-->
 
 **Track Infomation**
 
@@ -123,17 +125,20 @@ We will upload other tracks after dealing with copyright issues.
   </tr>  
 </table>
 
+
 **Model Configuration**
 
 ```python
 from lasaft.source_separation.\
-  conditioned.cunet.models.dcun_tfc_gpocm_lasaft\
-  import DCUN_TFC_GPoCM_LaSAFT_Framework
+  conditioned.cunet.models.\
+  dcun_tfc_gpocm_lightsaft \
+  import DCUN_TFC_GPoCM_LightSAFT_Framework
+
 
 args = {}
 
 # FFT params
-args['n_fft'] = 2048
+args['n_fft'] = 4096
 args['hop_length'] = 1024
 args['num_frame'] = 128
 
@@ -150,7 +155,7 @@ args['val_loss'] = 'raw_l1'
 
 # DenseNet Hyperparams
 
-args ['n_blocks'] = 7
+args ['n_blocks'] = 9
 args ['input_channels'] = 4
 args ['internal_channels'] = 24
 args ['first_conv_activation'] = 'relu'
@@ -160,15 +165,15 @@ args ['f_down_layers'] = None
 args ['tif_init_mode'] = None
 
 # TFC_TDF Block's Hyperparams
-args['n_internal_layers'] =5
+args['n_internal_layers'] = 5
 args['kernel_size_t'] = 3
 args['kernel_size_f'] = 3
 args['tfc_tdf_activation'] = 'relu'
 args['bn_factor'] = 16
 args['min_bn_units'] = 16
 args['tfc_tdf_bias'] = True
-args['num_tdfs'] = 6
-args['dk'] = 32
+args['num_tdfs'] = 16
+args['dk'] = 64
 
 args['control_vector_type'] = 'embedding'
 args['control_input_dim'] = 4
@@ -181,7 +186,7 @@ args['pocm_type'] = 'matmul'
 args['pocm_norm'] = 'batch_norm'
 
 
-model = DCUN_TFC_GPoCM_LaSAFT_Framework(**args)
+model = DCUN_TFC_GPoCM_LightSAFT_Framework(**args)
 ```
 
 - Implementation author: [Woosung Choi](https://ws-choi.github.io/) at [IELab](http://intelligence.korea.ac.kr/)
