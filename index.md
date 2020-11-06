@@ -5,19 +5,6 @@ layout: default
 ### Lightsaft: Memory-efficient Latent Source Attentive Frequency Transformation for Conditioned Source Separation
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/lasaft-latent-source-attentive-frequency/music-source-separation-on-musdb18)](https://paperswithcode.com/sota/music-source-separation-on-musdb18?p=lasaft-latent-source-attentive-frequency)
-<!--[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=http%3A%2F%2Flasaft.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) -->
-
-<!--
-**Official Github Repo** : [ws-choi/Conditioned-Source-Separation-LaSAFT](https://github.com/ws-choi/Conditioned-Source-Separation-LaSAFT)
-
-**Paper** : [arXiv](https://arxiv.org/abs/2010.11631)
-
-**Colab Interactive Demo**
-
-- [Stella Jang](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
-- [Feel this breeze - (Prod. JoeSwan) - HyungWoo & Sunmin](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
-- [Other tracks](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb)
--->
 
 
 **Track Infomation**
