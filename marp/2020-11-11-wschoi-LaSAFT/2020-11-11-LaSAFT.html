@@ -85,7 +85,7 @@
 <p>U-Net: an encoder-decoder structure with symmetric skip connections</p>
 <ul>
 <li>These symmetric skip connections allow models to recover fine-grained details of the target object during decoding effectively.<br />
-<img src="%7B%7Bpage.url%7D%7D/imgs/unet.png" alt="width:500" style="width:500px;" /></li>
+<img src="assets/imgs/unet.png" alt="width:500" style="width:500px;" /></li>
 </ul>
 </li>
 <li>
@@ -100,7 +100,7 @@
 <ul>
 <li>
 <p>Audio Equalizer - Eliminate signals with unwanted frequencies<br />
-<img src="%7B%7Bpage.url%7D%7D/imgs/eq.png" alt="" /></p>
+<img src="assets/imgs/eq.png" alt="" /></p>
 </li>
 <li>
 <p>Spectrogram-based Source Separation</p>
@@ -222,11 +222,11 @@
 <ul>
 <li>
 <p>Baseline U-Net</p>
-<p><img src="%7B%7Bpage.url%7D%7D/imgs/baseline.png" alt="width:600" style="width:600px;" /></p>
+<p><img src="assets/imgs/baseline.png" alt="width:600" style="width:600px;" /></p>
 </li>
 <li>
 <p>TFC vs TFC-TDF<br />
-<img src="%7B%7Bpage.url%7D%7D/imgs/naive_exp.png" alt="width:600" style="width:600px;" /></p>
+<img src="assets/imgs/naive_exp.png" alt="width:600" style="width:600px;" /></p>
 </li>
 </ul>
 </section>
@@ -235,7 +235,7 @@
 <ul>
 <li>
 <p>TFC vs TFC-TDF<br />
-<img src="%7B%7Bpage.url%7D%7D/imgs/naive_exp.png" alt="width:600" style="width:600px;" /></p>
+<img src="assets/imgs/naive_exp.png" alt="width:600" style="width:600px;" /></p>
 </li>
 <li>
 <p>Although it does improve SDR performance by capturing common frequency patterns observed across all instruments</p>
@@ -253,7 +253,7 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18">
 <h2>LaSAFT: Extending TDF to the Multi-Source Task (1)</h2>
-<p><img src="%7B%7Bpage.url%7D%7D/imgs/lasaft.png" alt="width:600" style="width:600px;" /></p>
+<p><img src="assets/imgs/lasaft.png" alt="width:600" style="width:600px;" /></p>
 <ul>
 <li>duplicate <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">I</mi><mi>L</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal{I}_L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathcal" style="margin-right:0.07382em;">I</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> copies of the second layer of the TDF,  where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">I</mi><mi>L</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal{I}_L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathcal" style="margin-right:0.07382em;">I</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> refers to the number of <em><strong>latent instruments</strong></em>.
 <ul>
@@ -265,7 +265,7 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19">
 <h2>LaSAFT: Extending TDF to the Multi-Source Task (2)</h2>
-<p><img src="%7B%7Bpage.url%7D%7D/imgs/lasaft.png" alt="width:600" style="width:600px;" /></p>
+<p><img src="assets/imgs/lasaft.png" alt="width:600" style="width:600px;" /></p>
 <ul>
 <li>The left side determines how much each <em><strong>latent source</strong></em> should be attended</li>
 <li>The LaSAFT takes as input  the instrument embedding <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>e</mi></msub><mo>∈</mo><msup><mi mathvariant="double-struck">R</mi><mrow><mn>1</mn><mo>×</mo><mi>E</mi></mrow></msup></mrow><annotation encoding="application/x-tex">z_e \in \mathbb{R}^{1 \times E}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8413309999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathbb">R</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">×</span><span class="mord mathnormal mtight" style="margin-right:0.05764em;">E</span></span></span></span></span></span></span></span></span></span></span></span>.</li>
@@ -275,7 +275,7 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20">
 <h2>LaSAFT: Extending TDF to the Multi-Source Task (3)</h2>
-<p><img src="%7B%7Bpage.url%7D%7D/imgs/lasaft.png" alt="width:600" style="width:600px;" /></p>
+<p><img src="assets/imgs/lasaft.png" alt="width:600" style="width:600px;" /></p>
 <ul>
 <li>
 <p>We now can compute the output of the LaSAFT as follows:</p>
@@ -301,18 +301,18 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21">
 <h2>Effects of employing LaSAFTs instead of TFC-TDFs</h2>
-<p><img src="%7B%7Bpage.url%7D%7D/imgs/lasaft_exp.png" alt="width:600" style="width:600px;" /></p>
+<p><img src="assets/imgs/lasaft_exp.png" alt="width:600" style="width:600px;" /></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22">
 <h2>GPoCM: FiLM is also not enough</h2>
 <ul>
 <li>
 <p>Feature-wise Linear Modulation (FiLM)<br />
-<img src="%7B%7Bpage.url%7D%7D/imgs/film.png" alt="width:500" style="width:500px;" /></p>
+<img src="assets/imgs/film.png" alt="width:500" style="width:500px;" /></p>
 </li>
 <li>
 <p>Point-wise Conolutional Modulation (PoCM)<br />
-<img src="%7B%7Bpage.url%7D%7D/imgs/pocm.png" alt="width:500" style="width:500px;" /></p>
+<img src="assets/imgs/pocm.png" alt="width:500" style="width:500px;" /></p>
 </li>
 </ul>
 </section>
@@ -330,7 +330,7 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 <ul>
 <li>where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>γ</mi><mi>c</mi><mi>i</mi></msubsup></mrow><annotation encoding="application/x-tex">\gamma_{c}^{i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.071664em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-2.4530000000000003em;margin-left:-0.05556em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>β</mi><mi>c</mi><mi>i</mi></msubsup></mrow><annotation encoding="application/x-tex">\beta_{c}^{i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.071664em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-2.4530000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span></span> are parameters generated by the condition generator, and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>X</mi><mi>i</mi></msup></mrow><annotation encoding="application/x-tex">X^{i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.824664em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span></span></span></span></span></span></span></span> is the output of the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>i</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">i^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">i</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span> decoder's intermediate block, whose subscript refers to the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>c</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">c^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span> channel of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span></li>
 </ul>
-<p><img src="%7B%7Bpage.url%7D%7D/imgs/pocm.png" alt="width:500" style="width:500px;" /></p>
+<p><img src="assets/imgs/pocm.png" alt="width:500" style="width:500px;" /></p>
 </li>
 </ul>
 </li>
@@ -355,14 +355,14 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25">
 <h2>Experimental Results</h2>
-<p><img src="%7B%7Bpage.url%7D%7D/imgs/exp.png" alt="width:1200" style="width:1200px;" /></p>
+<p><img src="assets/imgs/exp.png" alt="width:1200" style="width:1200px;" /></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26">
 <h2>LaSAFT + GPoCM</h2>
 <ul>
 <li>achieved <a href="https://paperswithcode.com/sota/music-source-separation-on-musdb18?p=lasaft-latent-source-attentive-frequency">state-of-the-art</a> SDR performance on vocals and other tasks in Musdb18.</li>
 </ul>
-<p><img src="%7B%7Bpage.url%7D%7D/imgs/musdb18.png" alt="" /></p>
+<p><img src="assets/imgs/musdb18.png" alt="" /></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27">
 <h2>Discussion</h2>
