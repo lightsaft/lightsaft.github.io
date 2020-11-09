@@ -64,7 +64,7 @@ Youtube Versions: [Stella Jang's](https://youtu.be/buWnt89kVzs), [Feel this bree
    
 ---
 
-## 2. Review: U-Net for Spectrogram-based Source Separation
+## 2.1. Review: U-Net for Spectrogram-based Source Separation
 
 - U-Net: an encoder-decoder structure with symmetric skip connections
   - These symmetric skip connections allow models to recover fine-grained details of the target object during decoding effectively.
@@ -72,9 +72,12 @@ Youtube Versions: [Stella Jang's](https://youtu.be/buWnt89kVzs), [Feel this bree
 
 - Originally proposed for ***Medical Image Segmentation***
   - can be also viewed as an Image-to-Image Translation
+  - The original U-Net is fully *2-d convolutional*
 
 
 ---
+
+## 2.1. Review: U-Net for Spectrogram-based Source Separation
 
 - Audio Equalizer - Eliminate signals with unwanted frequencies
 ![](assets/imgs/eq.png)
@@ -87,7 +90,34 @@ Youtube Versions: [Stella Jang's](https://youtu.be/buWnt89kVzs), [Feel this bree
 
 ---
 
-Rothman, D. "What’s wrong with CNNs and spectrograms for audio processing?." Tech. Rep. (2018).
+## 2.1. Review: U-Net For Spectrogram-based Source Separation
+
+- Naive Assumption
+  - Assuimg a spectrogram is a two (left and right) - channeled image
+  - Spectrogram-based Source Separation can be viewed as an Image-to-Image Translation
+
+- ..., and it works...!
+- Reality Check
+  - Rothman, D. "What’s wrong with CNNs and spectrograms for audio processing?." Tech. Rep. (2018).
+
+---
+
+## 2.2. Spectrogram $\neq$ Image
+
+- The assumption was too naive.
+
+### 가우오디오 논문 발췌
+### 우리꺼
+### 블로그꺼
+
+---
+
+## 2.2. Alternatives
+
+- 1-D CNNs
+- Dilated Convolutions
+- RNNs
+- FTBs
 
 ---
 
