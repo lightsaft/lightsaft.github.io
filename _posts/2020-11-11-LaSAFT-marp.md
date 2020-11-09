@@ -9,17 +9,7 @@ marp: true
 #### Our code and models are available [online](https://github.com/ws-choi/Conditioned-Source-Separation-LaSAFT).
 ##### You can also check separated samples from [here](https://lasaft.github.io).
 
-
----
-
-## Demonstrations: Conditioned Source Separation
-
-[![demo](https://i.imgur.com/8hPZJIY.png)](https://youtu.be/buWnt89kVzs?t=8) 
-
-Colab Demonstration - [Stella Jang's](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb), [Feel the breeze](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Feel_this_breeze.ipynb), [Other Examples](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM.ipynb)
-
-Youtube Versions: [Stella Jang's](https://youtu.be/buWnt89kVzs), [Feel this breeze](https://youtu.be/64Un0dXa9aU), [Other Examples](https://youtu.be/2GEpxjCo1tI)
-
+[opening bgm](/slide/gaudio/music/)
 
 ---
 
@@ -73,6 +63,7 @@ Youtube Versions: [Stella Jang's](https://youtu.be/buWnt89kVzs), [Feel this bree
 - Originally proposed for ***Medical Image Segmentation***
   - can be also viewed as an Image-to-Image Translation
   - The original U-Net is fully *2-d convolutional*
+
 
 
 ---
@@ -314,3 +305,14 @@ Youtube Versions: [Stella Jang's](https://youtu.be/buWnt89kVzs), [Feel this bree
 - However, we found that this approach is not practical since it makes the latent space (i.e., the decoder's input feature space) more discontinuous. 
 
 - Via preliminary experiments, we observed that applying FiLMs in the decoder was consistently better than applying FilMs in the encoder.
+
+---
+
+## Demonstrations: Conditioned Source Separation
+
+[![demo](https://i.imgur.com/8hPZJIY.png)](https://youtu.be/buWnt89kVzs?t=8) 
+
+Colab Demonstration - [Stella Jang's](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb), [Feel the breeze](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Feel_this_breeze.ipynb), [Other Examples](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM.ipynb)
+
+Youtube Versions: [Stella Jang's](https://youtu.be/buWnt89kVzs), [Feel this breeze](https://youtu.be/64Un0dXa9aU), [Other Examples](https://youtu.be/2GEpxjCo1tI)
+
