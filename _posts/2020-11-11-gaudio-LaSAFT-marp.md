@@ -31,8 +31,8 @@ marp: true
 
 ## 1. Task Definition: Source Separation
 
-- Separates signals of the specific source from a given mixed signal
-  - Music Source Separation, Speech Enhancement, ...
+- Separates signals of the specific source from a given mixed-signal
+  - Music Source Separation, Speech Enhancement...
  
 - Categories of Source separation models
 
@@ -47,11 +47,11 @@ marp: true
 ## 2. Part 1: Frequency Transformation Blocks (FTBs)
 1. **review**: a (*dedicated*) U-Net for Spectrogram-based Singing Voice Separation
 2. **motivation**: Spectrogram $\neq$ Image
-     - What’s wrong with CNNs and spectrograms for audio processing?
-     - Alternatives: 1-D CNNs, Dialated CNNs, FTBs, ...
+     - What's wrong with CNNs and spectrograms for audio processing?
+     - Alternatives: 1-D CNNs, Dilated CNNs, FTBs, ...
 3. **solution:** Frequency Transformation Blocks
      - Employing Fully-Connected (FC) Layers to capture Freq-to-Freq Dependencies
-     - (emperical results) Injecting FCs, called FTBs,  into a Fully 2-D Conv U-Net significantly improves SDR performance
+     - (empirical results) Injecting FCs, called FTBs,  into a Fully 2-D Conv U-Net significantly improves SDR performance
    
 ---
 
@@ -62,7 +62,7 @@ marp: true
   ![width:500](https://imgur.com/ua3qkU4.png)
 
 - Originally proposed for ***Medical Image Segmentation***
-  - can be also viewed as an Image-to-Image Translation
+  - can also be viewed as an Image-to-Image Translation
   - The original U-Net is fully *2-d convolutional*
 
 
@@ -98,15 +98,15 @@ marp: true
   - Takahashi, Naoya, and Yuki Mitsufuji. "Multi-scale multi-band densenets for audio source separation." 2017 IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA). IEEE, 2017.
 
 - Recall the assumption of this approach:
-  - Assuimg a spectrogram is a two (left and right) - channeled image
+  - Assuming a spectrogram is a two (left and right) - channeled image
   - Spectrogram-based Source Separation $\approx$ Image-to-Image Translation
-  - (emperical results) Fully 2-D Convs can provide promising results
+  - (empirical results) Fully 2-D Convs can provide promising results
 
 ---
 
 ## 2.2. Spectrogram $\neq$ Image
 
-- [What’s wrong with CNNs and spectrograms for audio processing?](https://towardsdatascience.com/whats-wrong-with-spectrograms-and-cnns-for-audio-processing-311377d7ccd)
+- [What's wrong with CNNs and spectrograms for audio processing?](https://towardsdatascience.com/whats-wrong-with-spectrograms-and-cnns-for-audio-processing-311377d7ccd)
   - The axes of spectrograms do not carry the same meaning
     - spatial invariance that 2D CNNs provide might not perform as well
   - The spectral properties of sounds are non-local
@@ -115,9 +115,9 @@ marp: true
 
 ---
 
-## 2.2. What’s wrong with CNNs and spectrograms for audio processing?
+## 2.2. What's wrong with CNNs and spectrograms for audio processing?
 
-- Yin, Dacheng, et al. "**PHASEN**: A Phase-and-Harmonics-Aware Speech Enhancement Network." AAAI. 2020.
+- Yin, Dacheng, et al."**PHASEN**: A Phase-and-Harmonics-Aware Speech Enhancement Network." AAAI. 2020.
   > Non-local correlations exist in a T-F spectrogram along the
 frequency axis. A typical example is the correlations among harmonics ... However, simply stacking several 2D convolution layers with small kernels cannot capture such global correlation. 
 - Park, Soochul, and Ben Sangbae Chon. "GSEP: A robust vocal and accompaniment separation system using gated CBHG module and loudness normalization." arXiv preprint arXiv:2010.12139 (2020).
@@ -180,7 +180,7 @@ class TDF(nn.Module):
             
     def forward(self, x):
         return self.tdf(x)
-```
+`"
 
 ---
 
