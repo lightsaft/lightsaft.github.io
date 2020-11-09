@@ -180,7 +180,8 @@ class TDF(nn.Module):
             
     def forward(self, x):
         return self.tdf(x)
-`"
+
+```
 
 ---
 
@@ -210,7 +211,7 @@ class TDF(nn.Module):
 
 ---
 
-### 3. Part 2: LaSAFT for Conditioned Source Separation
+## 3. Part 2: LaSAFT for Conditioned Source Separation
 
   - **review**: Conditioned-U-Net (C-U-Net) for Conditioned Source Separation
   - **motivation**: Extending FTB to Conditioned Source Separation
@@ -356,7 +357,8 @@ class TDF(nn.Module):
 
 - achieved [state-of-the-art](https://paperswithcode.com/sota/music-source-separation-on-musdb18?p=lasaft-latent-source-attentive-frequency) SDR performance on vocals and other tasks in Musdb18.
 
-![](https://imgur.com/A7JpmD9.png)
+![width:900](https://imgur.com/A7JpmD9.png)
+- news: outdated :(
 
 ---
 

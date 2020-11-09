@@ -5,7 +5,10 @@ permalink: /slide/gaudio/music/
 
 ### Lightsaft: Memory-efficient Latent Source Attentive Frequency Transformation for Conditioned Source Separation
 
+
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/lasaft-latent-source-attentive-frequency/music-source-separation-on-musdb18)](https://paperswithcode.com/sota/music-source-separation-on-musdb18?p=lasaft-latent-source-attentive-frequency)
+
+[return to slide](/slide/gaudio/)
 
 <audio controls="" class="audio-player" preload="metadata"><source src="{{ baseurl }}/audios/whatawonderfulworld.wav" type="audio/wav"></audio>
 
