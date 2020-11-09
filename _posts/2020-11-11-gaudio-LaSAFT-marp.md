@@ -86,29 +86,127 @@ marp: true
 - Naive Assumption
   - Assuimg a spectrogram is a two (left and right) - channeled image
   - Spectrogram-based Source Separation can be viewed as an Image-to-Image Translation
+  ![width:500](https://camo.githubusercontent.com/e2ca5fce45aafa29442a625b94f8987fbfeba61e624daeb3febc24a678772ea9/68747470733a2f2f706963342e7a68696d672e636f6d2f76322d38646638636164316466343765346134626537363533373831353636333335325f31323030783530302e6a7067)
+
+---
+
+## 2.1. Review: U-Net For Spectrogram-based Source Separation (2)
 
 - ..., and it works...!
-- Reality Check
-  - Rothman, D. "What’s wrong with CNNs and spectrograms for audio processing?." Tech. Rep. (2018).
+
+  - Jansson, A., et al. "Singing voice separation with deep U-Net convolutional networks." 18th International Society for Music Information Retrieval Conference. 2017.
+  - Takahashi, Naoya, and Yuki Mitsufuji. "Multi-scale multi-band densenets for audio source separation." 2017 IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA). IEEE, 2017.
+
+- Recall the assumption of this approach:
+  - Assuimg a spectrogram is a two (left and right) - channeled image
+  - Spectrogram-based Source Separation can be viewed as an Image-to-Image Translation
+  - (emperical results) Fully 2-D Convs can provide promising results
 
 ---
 
 ## 2.2. Spectrogram $\neq$ Image
 
-- The assumption was too naive.
+- [What’s wrong with CNNs and spectrograms for audio processing?](https://towardsdatascience.com/whats-wrong-with-spectrograms-and-cnns-for-audio-processing-311377d7ccd)
+  - The axes of spectrograms do not carry the same meaning
+    - spatial invariance that 2D CNNs provide might not perform as well
+  - The spectral properties of sounds are non-local
+    - Periodic sounds are typically comprised of a fundamental frequency and a number of harmonics which are spaced apart by relationships dictated by the source of the sound. It is the mixture of these harmonics that determines the timbre of the sound.
+  ![width:300](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Spectrogram_of_violin.png/642px-Spectrogram_of_violin.png)
 
-### 가우오디오 논문 발췌
-### 우리꺼
-### 블로그꺼
+---
 
+## 2.2. What’s wrong with CNNs and spectrograms for audio processing?
+
+- Yin, Dacheng, et al. "**PHASEN**: A Phase-and-Harmonics-Aware Speech Enhancement Network." AAAI. 2020.
+  > Non-local correlations exist in a T-F spectrogram along the
+frequency axis. A typical example is the correlations among harmonics ... However, simply stacking several 2D convolution layers with small kernels cannot capture such global correlation. 
+- Park, Soochul, and Ben Sangbae Chon. "GSEP: A robust vocal and accompaniment separation system using gated CBHG module and loudness normalization." arXiv preprint arXiv:2010.12139 (2020).
+  > The two-dimensional convolution network used in the Spleeter for a frequency component misses the useful information at lower or higher frequency components which is out of the kernel range.
+  
 ---
 
 ## 2.2. Alternatives
 
 - 1-D CNNs
+  - Liu, Jen-Yu, and Yi-Hsuan Yang. "Dilated convolution with dilated GRU for music source separation." arXiv preprint arXiv:1906.01203 (2019).
 - Dilated Convolutions
-- RNNs
-- FTBs
+  - Takahashi, Naoya, and Yuki Mitsufuji. "D3Net: Densely connected multidilated DenseNet for music source separation." arXiv preprint arXiv:2010.01733 (2020).
+- ***FTBs***: Frequency Transformation Blocks
+  - **PHASEN**, ours
+- RNNs: $\sim$ FTBs
+  - Takahashi, Naoya, Nabarun Goswami, and Yuki Mitsufuji. "Mmdenselstm: An efficient combination of convolutional and recurrent neural networks for audio source separation." 2018 16th International Workshop on Acoustic Signal Enhancement (IWAENC). IEEE, 2018.
+  
+---
+
+## 2.3. Our Approach: Injecting FTBs into U-Nets
+
+- ***FTBs***: Frequency Transformation Blocks
+
+  - An FT block called Time-Distributed Fully-connected Layer ([TDF](https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/blob/master/paper_with_code/Paper%20with%20Code%20-%203.%20INTERMEDIATE%20BLOCKS.ipynb)): 
+    ![width:800](https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tdf.png)
+
+  - Choi, Woosung, et al. "Investigating u-nets with various intermediate blocks for spectrogram-based singing voice separation." 21th International Society for Music Information Retrieval Conference, ISMIR, Ed. 2020.
+
+---
+
+## 2.3. Time-Distributed Fully-connected Layer
+
+```python 
+import torch
+import torch.nn as nn
+
+class TDF(nn.Module):
+    ''' [B, in_channels, T, F] => [B, in_channels, T, F] '''
+    def __init__(self, channels, f, bf=16, bias=False, min_bn_units=16):
+        
+        '''
+        channels: # channels
+        f: num of frequency bins
+        bf: bottleneck factor. if None: single layer. else: MLP that maps f => f//bf => f 
+        bias: bias setting of linear layers
+        '''
+        
+        super(TDF, self).__init__()
+
+          bn_unis = max(f//bf, min_bn_units)
+          self.tdf = nn.Sequential(
+              nn.Linear(f, bn_unis, bias),
+              nn.BatchNorm2d(channels),
+              nn.ReLU(),
+              nn.Linear(bn_unis, f, bias),
+              nn.BatchNorm2d(channels),
+              nn.ReLU()
+          )
+            
+    def forward(self, x):
+        return self.tdf(x)
+```
+
+---
+
+## 2.3. Injecting TDFs into a U-Net framework
+
+- Building Block TFC-TDF: Densely connected 2-d Conv (TFC) with TDFs
+
+  ![width:700](https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tfctdf.png)
+
+- U-Net with TFC-TDFs
+
+  ![width:300](https://imgur.com/tmhMpqL.png)   + ![width:500](https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tfctdf.png)
+
+---
+
+## 2.3. Results?
+
+![](https://imgur.com/Dby4Rkw.png)
+
+---
+
+## 2.3. Why does it work?: Weight visualization
+
+
+![width:500](https://imgur.com/bH4cgKq.png) ![width:500](https://imgur.com/8fSULqe.png)
+
 
 ---
 
