@@ -33,6 +33,7 @@ permalink: /slide/gaudio/
 <li><strong>review</strong>: Conditioned-U-Net (C-U-Net) for Conditioned Source Separation</li>
 <li><strong>motivation</strong>: Extending FTB to Conditioned Source Separation</li>
 <li><strong>solution:</strong> Latent Instrumant Attentive Frequency Transformation  Block (LaSAFT)</li>
+<li><strong>how to modulate latent features</strong>: more complex manipulation method than FiLM</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3">
@@ -116,99 +117,182 @@ permalink: /slide/gaudio/
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7">
 <h2>2.1. Review: U-Net For Spectrogram-based Source Separation</h2>
 <ul>
-<li>
-<p>Naive Assumption</p>
+<li>Naive Assumption
 <ul>
 <li>Assuimg a spectrogram is a two (left and right) - channeled image</li>
-<li>Spectrogram-based Source Separation can be viewed as an Image-to-Image Translation</li>
-</ul>
-</li>
-<li>
-<p>..., and it works...!</p>
-</li>
-<li>
-<p>Reality Check</p>
-<ul>
-<li>Rothman, D. &quot;What’s wrong with CNNs and spectrograms for audio processing?.&quot; Tech. Rep. (2018).</li>
+<li>Spectrogram-based Source Separation can be viewed as an Image-to-Image Translation<br />
+<img src="https://camo.githubusercontent.com/e2ca5fce45aafa29442a625b94f8987fbfeba61e624daeb3febc24a678772ea9/68747470733a2f2f706963342e7a68696d672e636f6d2f76322d38646638636164316466343765346134626537363533373831353636333335325f31323030783530302e6a7067" alt="width:500" style="width:500px;" /></li>
 </ul>
 </li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8">
-<h2>2.2. Spectrogram <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo mathvariant="normal">≠</mo></mrow><annotation encoding="application/x-tex">\neq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span></span></span></span> Image</h2>
+<h2>2.1. Review: U-Net For Spectrogram-based Source Separation (2)</h2>
 <ul>
-<li>The assumption was too naive.</li>
+<li>
+<p>..., and it works...!</p>
+<ul>
+<li>Jansson, A., et al. &quot;Singing voice separation with deep U-Net convolutional networks.&quot; 18th International Society for Music Information Retrieval Conference. 2017.</li>
+<li>Takahashi, Naoya, and Yuki Mitsufuji. &quot;Multi-scale multi-band densenets for audio source separation.&quot; 2017 IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA). IEEE, 2017.</li>
 </ul>
-<h3>가우오디오 논문 발췌</h3>
-<h3>우리꺼</h3>
-<h3>블로그꺼</h3>
+</li>
+<li>
+<p>Recall the assumption of this approach:</p>
+<ul>
+<li>Assuimg a spectrogram is a two (left and right) - channeled image</li>
+<li>Spectrogram-based Source Separation <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≈</mo></mrow><annotation encoding="application/x-tex">\approx</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.48312em;vertical-align:0em;"></span><span class="mrel">≈</span></span></span></span> Image-to-Image Translation</li>
+<li>(emperical results) Fully 2-D Convs can provide promising results</li>
+</ul>
+</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9">
-<h2>2.2. Alternatives</h2>
+<h2>2.2. Spectrogram <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo mathvariant="normal">≠</mo></mrow><annotation encoding="application/x-tex">\neq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span></span></span></span> Image</h2>
 <ul>
-<li>1-D CNNs</li>
-<li>Dilated Convolutions</li>
-<li>RNNs</li>
-<li>FTBs</li>
+<li><a href="https://towardsdatascience.com/whats-wrong-with-spectrograms-and-cnns-for-audio-processing-311377d7ccd">What’s wrong with CNNs and spectrograms for audio processing?</a>
+<ul>
+<li>The axes of spectrograms do not carry the same meaning
+<ul>
+<li>spatial invariance that 2D CNNs provide might not perform as well</li>
+</ul>
+</li>
+<li>The spectral properties of sounds are non-local
+<ul>
+<li>Periodic sounds are typically comprised of a fundamental frequency and a number of harmonics which are spaced apart by relationships dictated by the source of the sound. It is the mixture of these harmonics that determines the timbre of the sound.<br />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Spectrogram_of_violin.png/642px-Spectrogram_of_violin.png" alt="width:300" style="width:300px;" /></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10">
-<h2>Abstract</h2>
+<h2>2.2. What’s wrong with CNNs and spectrograms for audio processing?</h2>
 <ul>
-<li>Recent deep-learning approaches have shown that Frequency Transformation (FT) blocks can significantly improve spectrogram-based single-source separation models by capturing frequency patterns.</li>
-<li>The goal of this paper is to extend the FT block to fit the multi-source task.</li>
-<li>We propose
-<ul>
-<li>Latent Source Attentive Frequency Transformation (LaSAFT) block to capture source-dependent frequency patterns.</li>
-<li>Gated Point-wise Convolutional Modulation (GPoCM), an extension of Feature-wise Linear Modulation (FiLM), to modulate internal features.</li>
-</ul>
+<li>Yin, Dacheng, et al. &quot;<strong>PHASEN</strong>: A Phase-and-Harmonics-Aware Speech Enhancement Network.&quot; AAAI. 2020.
+<blockquote>
+<p>Non-local correlations exist in a T-F spectrogram along the<br />
+frequency axis. A typical example is the correlations among harmonics ... However, simply stacking several 2D convolution layers with small kernels cannot capture such global correlation.</p>
+</blockquote>
 </li>
-<li>By employing these two novel methods, we extend the Conditioned-U-Net (CUNet) for multi-source separation, and the experimental results indicate that our LaSAFT and GPoCM can improve the CUNet's performance, achieving state-of-the-art SDR performance on several MUSDB18 source separation tasks.</li>
+<li>Park, Soochul, and Ben Sangbae Chon. &quot;GSEP: A robust vocal and accompaniment separation system using gated CBHG module and loudness normalization.&quot; arXiv preprint arXiv:2010.12139 (2020).
+<blockquote>
+<p>The two-dimensional convolution network used in the Spleeter for a frequency component misses the useful information at lower or higher frequency components which is out of the kernel range.</p>
+</blockquote>
+</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11">
-<h2>Preliminaries 1: Categories of Source separation models</h2>
+<h2>2.2. Alternatives</h2>
 <ul>
-<li>
-<p><em>Dedicated models</em></p>
+<li>1-D CNNs
 <ul>
-<li>Most of the deep learning-based models for Music Source Separation (MSS) are dedicated to a single instrument.</li>
-<li>cons1: forces us to train an individual model for each instrument.</li>
-<li>cons2: models cannot use the commonalities between different instruments.</li>
+<li>Liu, Jen-Yu, and Yi-Hsuan Yang. &quot;Dilated convolution with dilated GRU for music source separation.&quot; arXiv preprint arXiv:1906.01203 (2019).</li>
 </ul>
 </li>
-<li>
-<p><em>Multi-head models</em></p>
+<li>Dilated Convolutions
 <ul>
-<li>Let us generate several outputs at once with a multi-head.</li>
-<li>Although it shows promising results, this approach still has a scaling issue: the number of heads increases as the number of instrument increases, leading
-<ol>
-<li>performance degradation caused by the shared bottleneck</li>
-<li>inefficient memory usage.</li>
-</ol>
+<li>Takahashi, Naoya, and Yuki Mitsufuji. &quot;D3Net: Densely connected multidilated DenseNet for music source separation.&quot; arXiv preprint arXiv:2010.01733 (2020).</li>
+</ul>
 </li>
+<li><em><strong>FTBs</strong></em>: Frequency Transformation Blocks
+<ul>
+<li><strong>PHASEN</strong>, ours</li>
+</ul>
+</li>
+<li>RNNs: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∼</mo></mrow><annotation encoding="application/x-tex">\sim</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">∼</span></span></span></span> FTBs
+<ul>
+<li>Takahashi, Naoya, Nabarun Goswami, and Yuki Mitsufuji. &quot;Mmdenselstm: An efficient combination of convolutional and recurrent neural networks for audio source separation.&quot; 2018 16th International Workshop on Acoustic Signal Enhancement (IWAENC). IEEE, 2018.</li>
 </ul>
 </li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12">
-<h2>Preliminaries 1: An alternative approach</h2>
-<ul>
-<li><strong>Conditioning/Meta-Learning</strong>
+<h2>2.3. Our Approach: Injecting FTBs into U-Nets</h2>
 <ul>
 <li>
-<p>can separate different instruments with the aid of the <strong>control mechanism</strong>.</p>
+<p><em><strong>FTBs</strong></em>: Frequency Transformation Blocks</p>
+<ul>
+<li>
+<p>An FTB called Time-Distributed Fully-connected Layer (<a href="https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/blob/master/paper_with_code/Paper%20with%20Code%20-%203.%20INTERMEDIATE%20BLOCKS.ipynb">TDF</a>):<br />
+<img src="https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tdf.png" alt="width:800" style="width:800px;" /></p>
 </li>
 <li>
-<p>no shared bottleneck, no multi-head output layer</p>
-<p><img src="https://github.com/gabolsgabs/cunet/raw/master/.markdown_images/overview.png" alt="width:700" style="width:700px;" /></p>
+<p>Choi, Woosung, et al. &quot;Investigating u-nets with various intermediate blocks for spectrogram-based singing voice separation.&quot; 21th International Society for Music Information Retrieval Conference, ISMIR, Ed. 2020.</p>
 </li>
 </ul>
 </li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13">
-<h2>Preliminaries 1: Conditioned Source Separation</h2>
+<h2>2.3. Time-Distributed Fully-connected Layer</h2>
+<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TDF</span>(<span class="hljs-params">nn.Module</span>):</span>
+    <span class="hljs-string">&#x27;&#x27;&#x27; [B, in_channels, T, F] =&gt; [B, in_channels, T, F] &#x27;&#x27;&#x27;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, channels, f, bf=<span class="hljs-number">16</span>, bias=<span class="hljs-literal">False</span>, min_bn_units=<span class="hljs-number">16</span></span>):</span>
+        
+        <span class="hljs-string">&#x27;&#x27;&#x27;
+        channels: # channels
+        f: num of frequency bins
+        bf: bottleneck factor. if None: single layer. else: MLP that maps f =&gt; f//bf =&gt; f 
+        bias: bias setting of linear layers
+        &#x27;&#x27;&#x27;</span>
+        
+        <span class="hljs-built_in">super</span>(TDF, self).__init__()
+
+          bn_unis = <span class="hljs-built_in">max</span>(f//bf, min_bn_units)
+          self.tdf = nn.Sequential(
+              nn.Linear(f, bn_unis, bias),
+              nn.BatchNorm2d(channels),
+              nn.ReLU(),
+              nn.Linear(bn_unis, f, bias),
+              nn.BatchNorm2d(channels),
+              nn.ReLU()
+          )
+            
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span>(<span class="hljs-params">self, x</span>):</span>
+        <span class="hljs-keyword">return</span> self.tdf(x)
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14">
+<h2>2.3. Injecting TDFs into a U-Net framework</h2>
+<ul>
+<li>
+<p>Building Block TFC-TDF: Densely connected 2-d Conv (TFC) with TDFs</p>
+<p><img src="https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tfctdf.png" alt="width:700" style="width:700px;" /></p>
+</li>
+<li>
+<p>U-Net with TFC-TDFs</p>
+<p><img src="https://imgur.com/tmhMpqL.png" alt="width:300" style="width:300px;" />   + <img src="https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tfctdf.png" alt="width:500" style="width:500px;" /></p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15">
+<h2>2.3. Results?</h2>
+<p><img src="https://imgur.com/Dby4Rkw.png" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16">
+<h2>2.3. Why does it work?: Weight visualization</h2>
+<p><img src="https://imgur.com/bH4cgKq.png" alt="width:500" style="width:500px;" /> <img src="https://imgur.com/8fSULqe.png" alt="width:500" style="width:500px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17">
+<h3>3. Part 2: LaSAFT for Conditioned Source Separation</h3>
+<ul>
+<li><strong>review</strong>: Conditioned-U-Net (C-U-Net) for Conditioned Source Separation</li>
+<li><strong>motivation</strong>: Extending FTB to Conditioned Source Separation
+<ul>
+<li>Naive Extention: Injecting FTBs into C-U-Net?</li>
+<li>(emprical results) It works, but ...</li>
+</ul>
+</li>
+<li><strong>solution:</strong> Latent Instrumant Attentive Frequency Transformation  Block (LaSAFT)</li>
+<li><strong>how to modulate latent features</strong>: more complex manipulation method than FiLM</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18">
+<h2>3.1. Conditioned Source Separation</h2>
 <ul>
 <li>Task Definition
 <ul>
@@ -216,49 +300,36 @@ permalink: /slide/gaudio/
 <li>Output: separated track of the target instrument</li>
 </ul>
 </li>
+<li>Method: Conditioning Learning
+<ul>
+<li>can separate different instruments with the aid of the <strong>control mechanism</strong>.</li>
+<li>Conditioned-U-Net (C-U-Net)
+<ul>
+<li>Meseguer-Brocal, Gabriel, and Geoffroy Peeters. &quot;CONDITIONED-U-NET: INTRODUCING A CONTROL MECHANISM IN THE U-NET FOR MULTIPLE SOURCE SEPARATIONS.&quot; Proceedings of the 20th International Society for Music Information Retrieval Conference. 2019.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14">
-<h2>Preliminaries 1: Example - Conditioned U-Net</h2>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19">
+<h2>3.1. C-U-Net</h2>
 <ul>
 <li>
 <p>Conditioned-U-Net extends the U-Net by exploiting Feature-wise Linear Modulation (FiLM)</p>
-<p><img src="https://github.com/gabolsgabs/cunet/raw/master/.markdown_images/c-u-net.png" alt="width:900" style="width:900px;" /></p>
+<p><img src="https://github.com/gabolsgabs/cunet/raw/master/.markdown_images/overview.png" alt="width:700" style="width:700px;" /></p>
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15">
-<h2>Preliminaries 2: Frequency Transformation Block</h2>
-<ul>
-<li>
-<p>Frequency patterns</p>
-<ul>
-<li>Recent spectrogram-based methods for Singing Voice Separation (SVS) or Speech Enhancement (SE) employed Frequency Transformation (FT) blocks to capture <em><strong>frequency patterns</strong></em>.</li>
-<li>Although stacking 2-D convolutions has shown remarkable results, it is hard to capture long-range dependencies along the frequency axis for fully convolutional networks with small sizes of kernels.</li>
-<li>FT blocks, which have <em><strong>fully-connected layers</strong></em> applied in a time-distributed manner, are useful to this end.</li>
-</ul>
-<p><img src="https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tdf.png" alt="width:400" style="width:400px;" /></p>
-</li>
-</ul>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20">
+<h2>3.1. C-U-Net: Feature-wise Linear Modulation</h2>
+<p><img src="https://github.com/gabolsgabs/cunet/raw/master/.markdown_images/c-u-net.png" alt="width:1200" style="width:1200px;" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16">
-<h2>Preliminaries 2: Injecting FT blocks into U-Nets</h2>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21">
+<h2>3.2. Naive Extention: Injecting FTBs into C-U-Net?</h2>
 <ul>
 <li>
-<p>An FT block called Time-Distributed Fully-connected Layer (TDF):<br />
-<img src="https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tdf.png" alt="width:800" style="width:800px;" /></p>
-</li>
-<li>
-<p>TFC-TDF: SDR 6.75dB <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> 7.12dB in Singing Voice Separation</p>
-<p><img src="https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tfctdf.png" alt="width:800" style="width:800px;" /></p>
-</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17">
-<h2>Naive Extention: Injecting FT blocks into C-U-Net?</h2>
-<ul>
-<li>
-<p>Baseline U-Net</p>
+<p>Baseline C-U-Net + TFC-TDFs</p>
 <p><img src="https://imgur.com/NpB5BpU.png" alt="width:600" style="width:600px;" /></p>
 </li>
 <li>
@@ -267,29 +338,26 @@ permalink: /slide/gaudio/
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18">
-<h2>Naive Extention: Above our expectation</h2>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22">
+<h2>3.2. Naive Extention: Above our expectation</h2>
 <ul>
 <li>
 <p>TFC vs TFC-TDF<br />
 <img src="https://imgur.com/e6giOhG.png" alt="width:600" style="width:600px;" /></p>
 </li>
 <li>
-<p>Although it does improve SDR performance by capturing common frequency patterns observed across all instruments</p>
-</li>
-<li>
-<p>Merely injecting an FT block to a CUNet <strong>does not inherit the spirit of FT block</strong></p>
-</li>
-<li>
-<p>In this paper,</p>
+<p>Although it does improve SDR performance by capturing common frequency patterns observed across all instruments,</p>
 <ul>
-<li>We propose the Latent Source-Attentive Frequency Transformation (LaSAFT), a novel frequency transformation block that can capture instrument-dependent frequency patterns by exploiting the scaled dot-product attention</li>
+<li>Merely injecting an FTB to a CUNet <strong>does not inherit the spirit of FTBs</strong></li>
 </ul>
+</li>
+<li>
+<p>We propose the Latent Source-Attentive Frequency Transformation (LaSAFT), a novel frequency transformation block that can capture instrument-dependent frequency patterns by exploiting the scaled dot-product attention</p>
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19">
-<h2>LaSAFT: Extending TDF to the Multi-Source Task (1)</h2>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23">
+<h2>3.3. LaSAFT: Extending TDF to the Multi-Source Task (1)</h2>
 <p><img src="https://imgur.com/vQNgttJ.png" alt="width:600" style="width:600px;" /></p>
 <ul>
 <li>duplicate <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">I</mi><mi>L</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal{I}_L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathcal" style="margin-right:0.07382em;">I</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> copies of the second layer of the TDF,  where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">I</mi><mi>L</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal{I}_L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathcal" style="margin-right:0.07382em;">I</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> refers to the number of <em><strong>latent instruments</strong></em>.
@@ -300,8 +368,8 @@ permalink: /slide/gaudio/
 <li>For the given frame <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>∈</mo><msup><mi mathvariant="double-struck">R</mi><mi>F</mi></msup></mrow><annotation encoding="application/x-tex">V\in \mathbb{R}^F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8413309999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathbb">R</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span></span></span></span></span></span></span></span></span></span></span>, we obtain the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">I</mi><mi>L</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal{I}_L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathcal" style="margin-right:0.07382em;">I</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> latent instrument-dependent frequency-to-frequency correlations, denoted by <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>V</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>∈</mo><msup><mi mathvariant="double-struck">R</mi><mrow><mi>F</mi><mo>×</mo><msub><mi mathvariant="script">I</mi><mi>L</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">V&#x27;\in \mathbb{R}^{F \times \mathcal{I}_L}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.790992em;vertical-align:-0.0391em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8413309999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathbb">R</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span><span class="mbin mtight">×</span><span class="mord mtight"><span class="mord mtight"><span class="mord mathcal mtight" style="margin-right:0.07382em;">I</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567071428571427em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.14329285714285717em;"><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20">
-<h2>LaSAFT: Extending TDF to the Multi-Source Task (2)</h2>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24">
+<h2>3.3. LaSAFT: Extending TDF to the Multi-Source Task (2)</h2>
 <p><img src="https://imgur.com/vQNgttJ.png" alt="width:600" style="width:600px;" /></p>
 <ul>
 <li>The left side determines how much each <em><strong>latent source</strong></em> should be attended</li>
@@ -310,8 +378,8 @@ permalink: /slide/gaudio/
 <li>By applying a linear layer of size <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">d_{k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">z_e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, we obtain <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>∈</mo><msup><mi mathvariant="double-struck">R</mi><msub><mi>d</mi><mi>k</mi></msub></msup></mrow><annotation encoding="application/x-tex">Q \in \mathbb{R}^{d_{k}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8491079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathbb">R</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15122857142857138em;"><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21">
-<h2>LaSAFT: Extending TDF to the Multi-Source Task (3)</h2>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25">
+<h2>3.3. LaSAFT: Extending TDF to the Multi-Source Task (3)</h2>
 <p><img src="https://imgur.com/vQNgttJ.png" alt="width:600" style="width:600px;" /></p>
 <ul>
 <li>
@@ -336,28 +404,30 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22">
-<h2>Effects of employing LaSAFTs instead of TFC-TDFs</h2>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26">
+<h2>3.3. Effects of employing LaSAFTs instead of TFC-TDFs</h2>
 <p><img src="https://imgur.com/sPVDDzZ.png" alt="width:600" style="width:600px;" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23">
-<h2>GPoCM: FiLM is also not enough</h2>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27">
+<h2>3.4. GPoCM: more complex manipulation method than FiLM</h2>
 <ul>
-<li>
-<p>Feature-wise Linear Modulation (FiLM)<br />
-<img src="https://imgur.com/A3kAxVS.png" alt="width:500" style="width:500px;" /></p>
-</li>
-<li>
-<p>Point-wise Conolutional Modulation (PoCM)<br />
-<img src="https://imgur.com/9A4otVA.png" alt="width:500" style="width:500px;" /></p>
+<li>FiLM (left) vs PoCM (right)</li>
+</ul>
+<p><img src="https://imgur.com/A3kAxVS.png" alt="width:550" style="width:550px;" /> <img src="https://imgur.com/9A4otVA.png" alt="width:550" style="width:550px;" /></p>
+<ul>
+<li>PoCM is an extension of FiLM.
+<ul>
+<li>while FiLM does not have inter-channel operations</li>
+<li>PoCM has inter-channel operations</li>
+</ul>
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24">
-<h2>GPoCM: PoCM</h2>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28">
+<h2>3.4. GPoCM: more complex manipulation method than FiLM (2)</h2>
 <ul>
 <li>
-<p>PoCM is an extension of FiLM. While FiLM does not have inter-channel operations</p>
+<p>PoCM is an extension of FiLM</p>
 <ul>
 <li>
 <p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>i</mi><mi>L</mi><mi>M</mi><mo stretchy="false">(</mo><msubsup><mi>X</mi><mi>c</mi><mi>i</mi></msubsup><mi mathvariant="normal">∣</mi><msubsup><mi>γ</mi><mi>c</mi><mi>i</mi></msubsup><mo separator="true">,</mo><msubsup><mi>β</mi><mi>c</mi><mi>i</mi></msubsup><mo stretchy="false">)</mo><mo>=</mo><msubsup><mi>γ</mi><mi>c</mi><mi>i</mi></msubsup><mo>⋅</mo><msubsup><mi>X</mi><mi>c</mi><mi>i</mi></msubsup><mo>+</mo><msubsup><mi>β</mi><mi>c</mi><mi>i</mi></msubsup></mrow><annotation encoding="application/x-tex">FiLM(X^{i}_{c}|\gamma_{c}^{i},\beta_{c}^{i}) =  \gamma_{c}^{i} \cdot X^{i}_{c} + \beta_{c}^{i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0746639999999998em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal">i</span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-2.4530000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mord">∣</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-2.4530000000000003em;margin-left:-0.05556em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-2.4530000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.071664em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-2.4530000000000003em;margin-left:-0.05556em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.071664em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-2.4530000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.071664em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-2.4530000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span></span></p>
@@ -373,8 +443,8 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25">
-<h2>GPoCM: Gated PoCM</h2>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29">
+<h2>3.4. GPoCM: more complex manipulation method than FiLM (3)</h2>
 <ul>
 <li>
 <p>Since this channel-wise linear combination can also be viewed as a point-wise convolution, we name it PoCM. With inter-channel operations, PoCM can modulate features more flexibly and expressively than FiLM.</p>
@@ -390,18 +460,18 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30">
 <h2>Experimental Results</h2>
 <p><img src="https://imgur.com/GYaO0Aa.png" alt="width:1200" style="width:1200px;" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31">
 <h2>LaSAFT + GPoCM</h2>
 <ul>
 <li>achieved <a href="https://paperswithcode.com/sota/music-source-separation-on-musdb18?p=lasaft-latent-source-attentive-frequency">state-of-the-art</a> SDR performance on vocals and other tasks in Musdb18.</li>
 </ul>
 <p><img src="https://imgur.com/A7JpmD9.png" alt="" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32">
 <h2>Discussion</h2>
 <ul>
 <li>
@@ -418,11 +488,25 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29">
-<h2>Demonstrations: Conditioned Source Separation</h2>
-<p><a href="https://youtu.be/buWnt89kVzs?t=8"><img src="https://i.imgur.com/8hPZJIY.png" alt="demo" /></a></p>
-<p>Colab Demonstration - <a href="https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb">Stella Jang's</a>, <a href="https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Feel_this_breeze.ipynb">Feel the breeze</a>, <a href="https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM.ipynb">Other Examples</a></p>
-<p>Youtube Versions: <a href="https://youtu.be/buWnt89kVzs">Stella Jang's</a>, <a href="https://youtu.be/64Un0dXa9aU">Feel this breeze</a>, <a href="https://youtu.be/2GEpxjCo1tI">Other Examples</a></p>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33">
+<h2>Links</h2>
+<ul>
+<li>
+<p>Choi, Woosung, et al. &quot;Investigating u-nets with various intermediate blocks for spectrogram-based singing voice separation.&quot; 21th International Society for Music Information Retrieval Conference, ISMIR, Ed. 2020.</p>
+<ul>
+<li><a href="https://program.ismir2020.net/poster_2-04.html">Abstract, Paper, Poster, and Video</a></li>
+<li><a href="https://github.com/ws-choi/ISMIR2020_U_Nets_SVS">Github</a></li>
+</ul>
+</li>
+<li>
+<p>Choi, Woosung, et al. &quot;LaSAFT: Latent Source Attentive Frequency Transformation for Conditioned Source Separation.&quot; arXiv preprint arXiv:2010.11631 (2020).</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2010.11631">ArXiv</a></li>
+<li><a href="https://github.com/ws-choi/Conditioned-Source-Separation-LaSAFT">Github</a></li>
+<li><a href="http://lasaft.github.io/">Demo tracks</a></li>
+</ul>
+</li>
+</ul>
 </section>
 <script>!function(){"use strict";const t="marpitSVGPolyfill:setZoomFactor,",e=Symbol();let o,r;function n(n){const i="object"==typeof n&&n.target||document,a="object"==typeof n?n.zoom:n;window[e]||(Object.defineProperty(window,e,{configurable:!0,value:!0}),window.addEventListener("message",({data:e,origin:o})=>{if(o===window.origin)try{if(e&&"string"==typeof e&&e.startsWith(t)){const[,t]=e.split(","),o=Number.parseFloat(t);Number.isNaN(o)||(r=o)}}catch(t){console.error(t)}}));let l=!1;Array.from(i.querySelectorAll("svg[data-marpit-svg]"),t=>{var e,n,i,s;t.style.transform||(t.style.transform="translateZ(0)");const c=a||r||t.currentScale||1;o!==c&&(o=c,l=c);const d=t.getBoundingClientRect(),{length:u}=t.children;for(let o=0;o<u;o+=1){const r=t.children[o],a=r.getScreenCTM();if(a){const t=null!==(n=null===(e=r.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==n?n:0,o=null!==(s=null===(i=r.y)||void 0===i?void 0:i.baseVal.value)&&void 0!==s?s:0,l=r.firstChild,{style:u}=l;u.transformOrigin||(u.transformOrigin=`${-t}px ${-o}px`),u.transform=`scale(${c}) matrix(${a.a}, ${a.b}, ${a.c}, ${a.d}, ${a.e-d.left}, ${a.f-d.top}) translateZ(0.0001px)`}}}),!1!==l&&Array.from(i.querySelectorAll("iframe"),({contentWindow:e})=>{null==e||e.postMessage(`${t}${l}`,"null"===window.origin?"*":window.origin)})}o=1,r=void 0;const i=(t,e,o)=>{if(t.getAttribute(e)!==o)return t.setAttribute(e,o),!0};function a(t={}){const e="boolean"==typeof t?(t=>{const e=!t;return console.warn(`[DEPRECATION WARNING] Usage of observer() with boolean option has been deprecated. Please replace with the usage of option object: observer({ once: ${e?"true":"false"} }).`),{once:e}})(t):t,{once:o=!1,target:r=document}=e,a="Apple Computer, Inc."===navigator.vendor?[n]:[];let l=!o;const s=()=>{for(const t of a)t({target:r});!function(t=document){Array.from(t.querySelectorAll('svg[data-marp-fitting="svg"]'),t=>{var e;const o=t.firstChild,r=o.firstChild,{scrollWidth:n,scrollHeight:a}=r;let l,s=1;if(t.hasAttribute("data-marp-fitting-code")&&(l=null===(e=t.parentElement)||void 0===e?void 0:e.parentElement),t.hasAttribute("data-marp-fitting-math")&&(l=t.parentElement),l){const t=getComputedStyle(l),e=Math.ceil(l.clientWidth-parseFloat(t.paddingLeft||"0")-parseFloat(t.paddingRight||"0"));e&&(s=e)}const c=Math.max(n,s),d=Math.max(a,1),u=`0 0 ${c} ${d}`;i(o,"width",""+c),i(o,"height",""+d),i(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),i(t,"viewBox",u)&&t.classList.toggle("__reflow__")})}(r),l&&window.requestAnimationFrame(s)};return s(),()=>{l=!1}}const l=Symbol(),s=document.currentScript;((t=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(t[l])return t[l];const e=a({target:t}),o=()=>{e(),delete t[l]};Object.defineProperty(t,l,{configurable:!0,value:o})})(s?s.getRootNode():document)}();
 </script></foreignObject></svg></div><script>!function(){"use strict";var e=function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),a=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),s={},i=function(e,t){return(t=t||{}).index=a.indexOf(e),t.slide=e,t},o=function(e,t){s[e]=(s[e]||[]).filter((function(e){return e!==t}))},l=function(e,t){return(s[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},c=function(e,t){a[e]&&(n&&l("deactivate",i(n,t)),n=a[e],l("activate",i(n,t)))},d=function(e,t){var r=a.indexOf(n)+e;l(e>0?"next":"prev",i(n,t))&&c(r,t)},u={off:o,on:function(e,t){return(s[e]||(s[e]=[])).push(t),o.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return a.indexOf(n);l("slide",i(a[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:a,destroy:function(e){l("destroy",i(n,e)),s={}}};return(t||[]).forEach((function(e){e(u)})),n||c(0),u};function t(e){e.parent.classList.add("bespoke-marp-parent"),e.slides.forEach((e=>e.classList.add("bespoke-marp-slide"))),e.on("activate",(t=>{const n=t.slide,r=!n.classList.contains("bespoke-marp-active");e.slides.forEach((e=>{e.classList.remove("bespoke-marp-active"),e.setAttribute("aria-hidden","true")})),n.classList.add("bespoke-marp-active"),n.removeAttribute("aria-hidden"),r&&(n.classList.add("bespoke-marp-active-ready"),document.body.clientHeight,n.classList.remove("bespoke-marp-active-ready"))}))}function n(e){let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],a=(r,a)=>{t=r,n=a,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const s=t<r||t===r&&n<=a;e.setAttribute("data-bespoke-marp-fragment",s?"active":"inactive"),t===r&&n===a?e.setAttribute("data-bespoke-marp-current-fragment","current"):e.removeAttribute("data-bespoke-marp-current-fragment")}))})),e.fragmentIndex=a;const s={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:a};e.fire("fragment",s)};e.on("next",(({fragment:s=!0})=>{if(s){if(r(1))return a(t,n+1),!1;const s=t+1;e.fragments[s]&&a(s,0)}else{const r=e.fragments[t].length;if(n+1<r)return a(t,r-1),!1;const s=e.fragments[t+1];s&&a(t+1,s.length-1)}})),e.on("prev",(({fragment:s=!0})=>{if(r(-1)&&s)return a(t,n-1),!1;const i=t-1;e.fragments[i]&&a(i,e.fragments[i].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const a=e.fragments[t];if(a){const{length:e}=a;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}a(t,r)})),a(0,0)}var r,a,s=(function(e){

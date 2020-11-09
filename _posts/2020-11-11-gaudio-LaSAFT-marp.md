@@ -25,6 +25,7 @@ marp: true
   - **review**: Conditioned-U-Net (C-U-Net) for Conditioned Source Separation
   - **motivation**: Extending FTB to Conditioned Source Separation
   - **solution:** Latent Instrumant Attentive Frequency Transformation  Block (LaSAFT)
+  - **how to modulate latent features**: more complex manipulation method than FiLM
 
 ---
 
@@ -93,13 +94,12 @@ marp: true
 ## 2.1. Review: U-Net For Spectrogram-based Source Separation (2)
 
 - ..., and it works...!
-
   - Jansson, A., et al. "Singing voice separation with deep U-Net convolutional networks." 18th International Society for Music Information Retrieval Conference. 2017.
   - Takahashi, Naoya, and Yuki Mitsufuji. "Multi-scale multi-band densenets for audio source separation." 2017 IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA). IEEE, 2017.
 
 - Recall the assumption of this approach:
   - Assuimg a spectrogram is a two (left and right) - channeled image
-  - Spectrogram-based Source Separation can be viewed as an Image-to-Image Translation
+  - Spectrogram-based Source Separation $\approx$ Image-to-Image Translation
   - (emperical results) Fully 2-D Convs can provide promising results
 
 ---
@@ -142,7 +142,7 @@ frequency axis. A typical example is the correlations among harmonics ... Howeve
 
 - ***FTBs***: Frequency Transformation Blocks
 
-  - An FT block called Time-Distributed Fully-connected Layer ([TDF](https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/blob/master/paper_with_code/Paper%20with%20Code%20-%203.%20INTERMEDIATE%20BLOCKS.ipynb)): 
+  - An FTB called Time-Distributed Fully-connected Layer ([TDF](https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/blob/master/paper_with_code/Paper%20with%20Code%20-%203.%20INTERMEDIATE%20BLOCKS.ipynb)): 
     ![width:800](https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tdf.png)
 
   - Choi, Woosung, et al. "Investigating u-nets with various intermediate blocks for spectrogram-based singing voice separation." 21th International Society for Music Information Retrieval Conference, ISMIR, Ed. 2020.
@@ -210,84 +210,47 @@ class TDF(nn.Module):
 
 ---
 
-## Abstract
+### 3. Part 2: LaSAFT for Conditioned Source Separation
 
-- Recent deep-learning approaches have shown that Frequency Transformation (FT) blocks can significantly improve spectrogram-based single-source separation models by capturing frequency patterns. 
-- The goal of this paper is to extend the FT block to fit the multi-source task.
-- We propose
-  - Latent Source Attentive Frequency Transformation (LaSAFT) block to capture source-dependent frequency patterns. 
-  - Gated Point-wise Convolutional Modulation (GPoCM), an extension of Feature-wise Linear Modulation (FiLM), to modulate internal features. 
-- By employing these two novel methods, we extend the Conditioned-U-Net (CUNet) for multi-source separation, and the experimental results indicate that our LaSAFT and GPoCM can improve the CUNet's performance, achieving state-of-the-art SDR performance on several MUSDB18 source separation tasks.
-
----
-
-## Preliminaries 1: Categories of Source separation models
-
-- *Dedicated models*
-  - Most of the deep learning-based models for Music Source Separation (MSS) are dedicated to a single instrument.
-  - cons1: forces us to train an individual model for each instrument.
-  - cons2: models cannot use the commonalities between different instruments.
-
-- *Multi-head models*
-  - Let us generate several outputs at once with a multi-head.
-  - Although it shows promising results, this approach still has a scaling issue: the number of heads increases as the number of instrument increases, leading 
-    1. performance degradation caused by the shared bottleneck
-    2. inefficient memory usage.
+  - **review**: Conditioned-U-Net (C-U-Net) for Conditioned Source Separation
+  - **motivation**: Extending FTB to Conditioned Source Separation
+    - Naive Extention: Injecting FTBs into C-U-Net?
+    - (emprical results) It works, but ...
+  - **solution:** Latent Instrumant Attentive Frequency Transformation  Block (LaSAFT)
+  - **how to modulate latent features**: more complex manipulation method than FiLM
 
 ---
 
-## Preliminaries 1: An alternative approach
-
-- **Conditioning/Meta-Learning**
-  - can separate different instruments with the aid of the **control mechanism**. 
-  - no shared bottleneck, no multi-head output layer
-
-    ![width:700](https://github.com/gabolsgabs/cunet/raw/master/.markdown_images/overview.png)
-
----
-
-## Preliminaries 1: Conditioned Source Separation
+## 3.1. Conditioned Source Separation
 
 - Task Definition
   - Input: an input audio track $A$ and a one-hot encoding vector $C$ that specifies which instrument we want to separate
   - Output: separated track of the target instrument
+- Method: Conditioning Learning
+  - can separate different instruments with the aid of the **control mechanism**. 
+  - Conditioned-U-Net (C-U-Net)
+    - Meseguer-Brocal, Gabriel, and Geoffroy Peeters. "CONDITIONED-U-NET: INTRODUCING A CONTROL MECHANISM IN THE U-NET FOR MULTIPLE SOURCE SEPARATIONS." Proceedings of the 20th International Society for Music Information Retrieval Conference. 2019.
 
 ---
 
-## Preliminaries 1: Example - Conditioned U-Net
+## 3.1. C-U-Net
 
 - Conditioned-U-Net extends the U-Net by exploiting Feature-wise Linear Modulation (FiLM)
 
-  ![width:900](https://github.com/gabolsgabs/cunet/raw/master/.markdown_images/c-u-net.png)
+  ![width:700](https://github.com/gabolsgabs/cunet/raw/master/.markdown_images/overview.png)
+
 
 ---
 
-## Preliminaries 2: Frequency Transformation Block
+## 3.1. C-U-Net: Feature-wise Linear Modulation
 
-- Frequency patterns
-
-  - Recent spectrogram-based methods for Singing Voice Separation (SVS) or Speech Enhancement (SE) employed Frequency Transformation (FT) blocks to capture ***frequency patterns***.
-  - Although stacking 2-D convolutions has shown remarkable results, it is hard to capture long-range dependencies along the frequency axis for fully convolutional networks with small sizes of kernels. 
-  - FT blocks, which have ***fully-connected layers*** applied in a time-distributed manner, are useful to this end.
-
-  ![width:400](https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tdf.png)
+  ![width:1200](https://github.com/gabolsgabs/cunet/raw/master/.markdown_images/c-u-net.png)
 
 ---
 
-## Preliminaries 2: Injecting FT blocks into U-Nets
+## 3.2. Naive Extention: Injecting FTBs into C-U-Net?
 
-- An FT block called Time-Distributed Fully-connected Layer (TDF): 
-  ![width:800](https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tdf.png)
-
-- TFC-TDF: SDR 6.75dB $\rightarrow$ 7.12dB in Singing Voice Separation
-
-  ![width:800](https://github.com/ws-choi/ISMIR2020_U_Nets_SVS/raw/cc6fb8048da2af3748aece6ae639af51b93c0a84/paper_with_code/img/tfctdf.png)
-
----
-
-## Naive Extention: Injecting FT blocks into C-U-Net?
-
-- Baseline U-Net
+- Baseline C-U-Net + TFC-TDFs
 
   ![width:600](https://imgur.com/NpB5BpU.png)
 
@@ -296,20 +259,19 @@ class TDF(nn.Module):
 
 ---
 
-## Naive Extention: Above our expectation
+## 3.2. Naive Extention: Above our expectation
 
 - TFC vs TFC-TDF
   ![width:600](https://imgur.com/e6giOhG.png)
 
-- Although it does improve SDR performance by capturing common frequency patterns observed across all instruments
-- Merely injecting an FT block to a CUNet **does not inherit the spirit of FT block**
+- Although it does improve SDR performance by capturing common frequency patterns observed across all instruments,
+  - Merely injecting an FTB to a CUNet **does not inherit the spirit of FTBs**
 
-- In this paper, 
-  - We propose the Latent Source-Attentive Frequency Transformation (LaSAFT), a novel frequency transformation block that can capture instrument-dependent frequency patterns by exploiting the scaled dot-product attention
+- We propose the Latent Source-Attentive Frequency Transformation (LaSAFT), a novel frequency transformation block that can capture instrument-dependent frequency patterns by exploiting the scaled dot-product attention
 
 ---
 
-## LaSAFT: Extending TDF to the Multi-Source Task (1)
+## 3.3. LaSAFT: Extending TDF to the Multi-Source Task (1)
 
 ![width:600](https://imgur.com/vQNgttJ.png)
 
@@ -319,7 +281,7 @@ class TDF(nn.Module):
 
 ---
 
-## LaSAFT: Extending TDF to the Multi-Source Task (2)
+## 3.3. LaSAFT: Extending TDF to the Multi-Source Task (2)
 
 ![width:600](https://imgur.com/vQNgttJ.png)
 
@@ -330,7 +292,7 @@ class TDF(nn.Module):
 
 ---
 
-## LaSAFT: Extending TDF to the Multi-Source Task (3)
+## 3.3. LaSAFT: Extending TDF to the Multi-Source Task (3)
 
 ![width:600](https://imgur.com/vQNgttJ.png)
 
@@ -342,24 +304,27 @@ class TDF(nn.Module):
 
 ---
 
-## Effects of employing LaSAFTs instead of TFC-TDFs
+## 3.3. Effects of employing LaSAFTs instead of TFC-TDFs
 
 ![width:600](https://imgur.com/sPVDDzZ.png)
 
 ---
 
-## GPoCM: FiLM is also not enough
+## 3.4. GPoCM: more complex manipulation method than FiLM
 
-- Feature-wise Linear Modulation (FiLM)
-  ![width:500](https://imgur.com/A3kAxVS.png)
+- FiLM (left) vs PoCM (right)
 
-- Point-wise Conolutional Modulation (PoCM)
-  ![width:500](https://imgur.com/9A4otVA.png)
+![width:550](https://imgur.com/A3kAxVS.png) ![width:550](https://imgur.com/9A4otVA.png)
+
+- PoCM is an extension of FiLM. 
+  - while FiLM does not have inter-channel operations
+  - PoCM has inter-channel operations
+
 ---
 
-## GPoCM: PoCM
+## 3.4. GPoCM: more complex manipulation method than FiLM (2)
 
-- PoCM is an extension of FiLM. While FiLM does not have inter-channel operations
+- PoCM is an extension of FiLM
 
   - $FiLM(X^{i}_{c}|\gamma_{c}^{i},\beta_{c}^{i}) =  \gamma_{c}^{i} \cdot X^{i}_{c} + \beta_{c}^{i}$
 
@@ -370,7 +335,7 @@ class TDF(nn.Module):
 
 ---
 
-## GPoCM: Gated PoCM
+## 3.4. GPoCM: more complex manipulation method than FiLM (3)
 
 - Since this channel-wise linear combination can also be viewed as a point-wise convolution, we name it PoCM. With inter-channel operations, PoCM can modulate features more flexibly and expressively than FiLM.
 
@@ -406,11 +371,13 @@ class TDF(nn.Module):
 
 ---
 
-## Demonstrations: Conditioned Source Separation
+## Links
 
-[![demo](https://i.imgur.com/8hPZJIY.png)](https://youtu.be/buWnt89kVzs?t=8) 
-
-Colab Demonstration - [Stella Jang's](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Stella_Jang_Example.ipynb), [Feel the breeze](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM_Feel_this_breeze.ipynb), [Other Examples](https://colab.research.google.com/github/ws-choi/Conditioned-Source-Separation-LaSAFT/blob/main/colab_demo/LaSAFT_with_GPoCM.ipynb)
-
-Youtube Versions: [Stella Jang's](https://youtu.be/buWnt89kVzs), [Feel this breeze](https://youtu.be/64Un0dXa9aU), [Other Examples](https://youtu.be/2GEpxjCo1tI)
-
+- Choi, Woosung, et al. "Investigating u-nets with various intermediate blocks for spectrogram-based singing voice separation." 21th International Society for Music Information Retrieval Conference, ISMIR, Ed. 2020.
+  - [Abstract, Paper, Poster, and Video](https://program.ismir2020.net/poster_2-04.html)
+  - [Github](https://github.com/ws-choi/ISMIR2020_U_Nets_SVS)
+  
+- Choi, Woosung, et al. "LaSAFT: Latent Source Attentive Frequency Transformation for Conditioned Source Separation." arXiv preprint arXiv:2010.11631 (2020).
+  - [ArXiv](https://arxiv.org/abs/2010.11631)
+  - [Github](https://github.com/ws-choi/Conditioned-Source-Separation-LaSAFT)
+  - [Demo tracks](http://lasaft.github.io/)
