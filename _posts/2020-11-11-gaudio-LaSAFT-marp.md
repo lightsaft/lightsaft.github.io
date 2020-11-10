@@ -110,7 +110,7 @@ marp: true
   - The axes of spectrograms do not carry the same meaning
     - spatial invariance that 2D CNNs provide might not perform as well
   - The spectral properties of sounds are non-local
-    - Periodic sounds are typically comprised of a fundamental frequency and a number of harmonics which are spaced apart by relationships dictated by the source of the sound. It is the mixture of these harmonics that determines the timbre of the sound.
+    - Periodic sounds are typically comprised of a fundamental frequency and a number of **harmonics** which are spaced apart by relationships dictated by the source of the sound. It is the mixture of these harmonics that determines the timbre of the sound.
   ![width:300](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Spectrogram_of_violin.png/642px-Spectrogram_of_violin.png)
 
 ---
@@ -125,6 +125,18 @@ frequency axis. A typical example is the correlations among harmonics ... Howeve
   
 ---
 
+## 2.2. Source Separation
+
+- Harmonics
+  - ![](https://imgur.com/Bsdv5VI.png) ![](https://imgur.com/wM3k1iL.gif)
+
+- Timbre of 'Singing Voice' - decided by resonance patterns
+
+  ![](https://imgur.com/zG32WnQ.png)
+
+
+---
+
 ## 2.2. Alternatives
 
 - 1-D CNNs
@@ -135,8 +147,20 @@ frequency axis. A typical example is the correlations among harmonics ... Howeve
   - **PHASEN**, ours
 - RNNs: $\sim$ FTBs
   - Takahashi, Naoya, Nabarun Goswami, and Yuki Mitsufuji. "Mmdenselstm: An efficient combination of convolutional and recurrent neural networks for audio source separation." 2018 16th International Workshop on Acoustic Signal Enhancement (IWAENC). IEEE, 2018.
-  
+
 ---
+
+## 2.2. Receptive Field: 2-D Conv Layer vs FC Layer
+
+- [2-D Conv](https://medium.com/mlreview/a-guide-to-receptive-field-arithmetic-for-convolutional-neural-networks-e0f514068807)
+
+![](https://imgur.com/CdgW7Rx.png)
+
+- A single Fully-Connected Layer 
+  - can capture every freq-to-freq correlation!
+
+---
+
 
 ## 2.3. Our Approach: Injecting FTBs into U-Nets
 
@@ -199,15 +223,26 @@ class TDF(nn.Module):
 
 ## 2.3. Results?
 
+- Ablation (n_fft = 2048)
+  - U-Net with 17 TFC blocks: SDR 6.89dB
+  - U-Net with 17 TFC-**TDF** blocks: SDR 7.12dB (+0.23 dB)
+
+- Large Model (n_fft = 4096)
 ![](https://imgur.com/Dby4Rkw.png)
 
 ---
 
 ## 2.3. Why does it work?: Weight visualization
 
+- freq patterns of different sources captured by TDFs, of FTBs
 
 ![width:500](https://imgur.com/bH4cgKq.png) ![width:500](https://imgur.com/8fSULqe.png)
 
+---
+
+## 2.3. ISMIR 2020
+
+![width:600](https://imgur.com/C5XUq5W.png)
 
 ---
 
@@ -269,6 +304,13 @@ class TDF(nn.Module):
   - Merely injecting an FTB to a CUNet **does not inherit the spirit of FTBs**
 
 - We propose the Latent Source-Attentive Frequency Transformation (LaSAFT), a novel frequency transformation block that can capture instrument-dependent frequency patterns by exploiting the scaled dot-product attention
+
+---
+
+## 3.3. LaSAFT: Motivation
+
+- $\mathcal{I}_L$
+
 
 ---
 
