@@ -150,7 +150,7 @@ frequency axis. A typical example is the correlations among harmonics ... Howeve
 
 ---
 
-## 2.2. Receptive Field: 2-D Conv Layer vs FC Layer
+## 2.2. Receptive Field: 2-D Conv Layer vs. FC Layer
 
 - [2-D Conv](https://medium.com/mlreview/a-guide-to-receptive-field-arithmetic-for-convolutional-neural-networks-e0f514068807)
 
@@ -309,7 +309,32 @@ class TDF(nn.Module):
 
 ## 3.3. LaSAFT: Motivation
 
-- $\mathcal{I}_L$
+- Extending TDF to the Multi-Source Task
+  - Naive Extension: MUX-like approach
+    - A TDF for each instrument: $\mathcal{I}$ instrument => $\mathcal{I}$ TDFs
+    ![](https://upload.wikimedia.org/wikipedia/commons/e/e0/Telephony_multiplexer_system.gif)
+
+  - However, there are much more 'instruments' we have to consider in fact
+    - female-classic-soprano, male-jazz-baritone ... $\in$ 'vocals' 
+    - kick, snare, rimshot, hat(closed), tom-tom ... $\in$ 'drums'
+    - contrabass, electronic, walking bass piano (boogie woogie) ... $\in$ 'bass'  
+
+---
+
+## 3.3. Latent Source-attentive Frequency Transformation
+
+- We assume that there are  $\mathcal{I}_L$ latent instruemtns
+  - string-finger-low_freq
+  - string-bow-low_freq
+  - brass-high-solo
+  - percussive-high
+  - ...
+- We assume each instrument can be represented as a weighted average of them
+  - bass: 0.7 string-finger-low_freq + 0.2 string-bow-low_freq + 0.1 percussive-low
+
+- LaSAFT
+  - $\mathcal{I}_L$ TDFs for  $\mathcal{I}_L$ latent instruemtns
+  - attention-based weighted average
 
 
 ---
