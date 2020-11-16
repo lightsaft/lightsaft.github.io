@@ -44,6 +44,19 @@ marp: true
 
 ---
 
+## 1. Task Definition
+
+- Digital Audio Signal Processing (sr:44100Hz)
+  - ![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Digital.signal.discret.svg/330px-Digital.signal.discret.svg.png)
+
+  - Linear Audio Mixing System
+    - $M[t]=\sum S^{(i)}[t] + N[t]$
+  
+  - Audio Source Separation 
+    - $ASS(M[t])=\{S^{(0)}, S^{(1)}, ..., S^{(n)}\}$
+
+---
+
 ## 2. Part 1: Frequency Transformation Blocks (FTBs)
 1. **review**: a (*dedicated*) U-Net for Spectrogram-based Singing Voice Separation
 2. **motivation**: Spectrogram $\neq$ Image
@@ -81,6 +94,15 @@ marp: true
 
 
 ---
+
+## 2.1. Review: U-Net for Spectrogram-based Source Separation
+
+- Spec2Spec (Masking-based or Direct Estimation)
+  ![height:500](https://imgur.com/ZHXdV38.png)
+
+
+---
+
 
 ## 2.1. Review: U-Net For Spectrogram-based Source Separation
 
